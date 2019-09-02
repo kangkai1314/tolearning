@@ -10,7 +10,7 @@
             <left-nav></left-nav>
            </el-aside>
            <el-main>
-             <main-view></main-view>
+            <router-view></router-view>
            </el-main>
 
          </el-container>
