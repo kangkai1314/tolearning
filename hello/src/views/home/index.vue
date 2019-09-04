@@ -12,9 +12,7 @@
            <el-main>
             <router-view></router-view>
            </el-main>
-
          </el-container>
-
      </el-container>
 
     </div>
@@ -51,7 +49,7 @@ export default {
     }
   },
   created () {
-    this.processJson()
+    // this.processJson()
   },
   methods: {
     handleClose (done) {
