@@ -9,6 +9,7 @@ from tornado.options import define,options
 define("port",default=8080,help='running on the give port',type=int)
 
 class IndexHandler(tornado.web.RequestHandler):
+    @tornado.web.asynchronous
     def get(self):
         greeting=self.get_argument('greeting','hello')
         #self.write(greeting+' friendly user !')

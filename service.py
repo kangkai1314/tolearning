@@ -11,6 +11,8 @@ from tornado.options import define,options
 define("port",default=8000,help='runnning on ther given port',type=int)
 
 class WorkHandler(tornado.web.RequestHandler):
+
+    @tornado.web.asynchronous
     def get(self,word):
         coll=self.application.db.word
         print (coll)
@@ -27,6 +29,8 @@ class IndexHandler(tornado.web.RequestHandler):
         self.render('index.html')
 
 class ApiHandler(tornado.web.RequestHandler):
+
+
     def get(self,word):
         db=self.application.db.task
         #results=db.find_one()
@@ -43,6 +47,13 @@ class ApiHandler(tornado.web.RequestHandler):
             a['name']='pythonjob'+str(i)
             result['dataList'].append(a)
         self.write(result)
+
+class AdHandler(tornado.web.RequestHandler):
+    pass
+
+
+
+
 
 
 class Application(tornado.web.Application):

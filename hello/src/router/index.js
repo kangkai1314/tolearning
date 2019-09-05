@@ -39,6 +39,9 @@ export default new Router({
           path: 'bilibili',
           component: () => import('@/views/sim/bilibili')
 
+        }, {
+          path: 'zhihu',
+          component: () => import('@/views/sim/zhihu')
         }
 
       ]
