@@ -12,7 +12,7 @@
           <el-menu-item index="/zhihu">zhihu</el-menu-item>
         </el-menu-item-group>
         <el-menu-item-group title="分组2">
-          <el-menu-item index="1-3">选项3</el-menu-item>
+          <el-menu-item index="soul">soul</el-menu-item>
         </el-menu-item-group>
         <el-submenu index="1-4">
           <span slot="title">选项4</span>
