@@ -2,6 +2,7 @@ import tornado.httpserver
 import tornado.ioloop
 import tornado.options
 import tornado.web
+import tornado.websocket
 
 import pymongo
 import os,json
@@ -12,7 +13,6 @@ define("port",default=8000,help='runnning on ther given port',type=int)
 
 class WorkHandler(tornado.web.RequestHandler):
 
-    @tornado.web.asynchronous
     def get(self,word):
         coll=self.application.db.word
         print (coll)
@@ -51,14 +51,21 @@ class ApiHandler(tornado.web.RequestHandler):
 class AdHandler(tornado.web.RequestHandler):
     pass
 
+class EchoHandler(tornado.websocket.WebSocketHandler):
 
+    def open(self, *args: str, **kwargs: str):
+        print('web socket opened')
 
+    def on_message(self, message):
+        self.write_message(message)
 
+    def close(self, code: int = None, reason: str = None):
+        print('web socket close')
 
 
 class Application(tornado.web.Application):
     def __init__(self):
-        handlers=[(r"/word/(\w+)", WorkHandler),(r"/",IndexHandler),(r"/api/(\w+)",ApiHandler)]
+        handlers=[(r"/word/(\w+)", WorkHandler),(r"/",IndexHandler),(r"/api/(\w+)",ApiHandler),(r"/chat",EchoHandler)]
         conn=pymongo.MongoClient(host='localhost',port=27017)
         self.db=conn.kangkai
         tornado.web.Application.__init__(self,handlers=handlers,debug=True,template_path=os.path.join(os.path.dirname(__file__),"hello/dist"),static_path=os.path.join(os.path.dirname(__file__), "hello/dist/static"))
