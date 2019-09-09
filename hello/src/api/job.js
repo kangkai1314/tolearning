@@ -6,3 +6,10 @@ export function fetchJobs () {
     url: '/jobs'
   })
 }
+
+export function fetchLiepinJobs () {
+  return request({
+    method: 'get',
+    url: 'api/liepin/jobs'
+  })
+}

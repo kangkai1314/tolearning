@@ -3,6 +3,13 @@
  <p>统计拉勾网和猎聘网相关工作内容</p>
   <div class="job-content">
     <el-row>
+      <el-col :span="8" v-for="i in 10" :key="i" style="margin: 20px;padding: 10px;width: 200px;display: block;background-color: #13ce66;height: 100px">
+        <h3>job name</h3>
+        <p>publish date</p>
+      </el-col>
+    </el-row>
+
+    <el-row>
       <el-col :span="12">
         <p>拉勾</p>
         <ul>
@@ -21,7 +28,7 @@
 </template>
 
 <script>
-import {fetchJobs} from '../../api/job'
+import {fetchJobs, fetchLiepinJobs} from '../../api/job'
 
 export default {
   name: 'job',
@@ -33,6 +40,7 @@ export default {
   },
   created () {
     this.getJobs()
+    this.getLiepinJobs()
   },
   methods: {
     getJobs: function () {
@@ -42,6 +50,11 @@ export default {
       }).catch(error => {
         console.log(error)
         this.$message.error('api failed')
+      })
+    },
+    getLiepinJobs: function () {
+      fetchLiepinJobs().then(response => {
+        console.log(response.data.dataList)
       })
     }
   }
