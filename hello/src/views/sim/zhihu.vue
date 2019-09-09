@@ -16,7 +16,7 @@ padding: 10px;text-align: center">
                   <el-input placeholder="请输入六位密码"></el-input>
                 </el-form-item>
                 <el-form-item>
-                  <el-button>注册/登录</el-button>
+                  <el-button @click="login">注册/登录</el-button>
                 </el-form-item>
               </el-form>
             </el-tab-pane>
@@ -70,6 +70,11 @@ export default {
   data () {
     return {
       url: 'https://pic4.zhimg.com/80/v2-a47051e92cf74930bedd7469978e6c08_hd.png'
+    }
+  },
+  methods: {
+    login: function () {
+      this.$router.push('/zhihupage')
     }
   }
 }

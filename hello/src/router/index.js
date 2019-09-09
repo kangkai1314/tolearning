@@ -46,6 +46,9 @@ export default new Router({
         {
           path: 'soul',
           component: () => import('@/views/sim/soul')
+        }, {
+          path: 'zhihupage',
+          component: () => import('@/views/sim/zhihu/index')
         }
 
       ]
