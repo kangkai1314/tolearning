@@ -10,6 +10,6 @@ export function fetchJobs () {
 export function fetchLiepinJobs () {
   return request({
     method: 'get',
-    url: 'api/liepin/jobs'
+    url: '/api/liepin/jobs'
   })
 }

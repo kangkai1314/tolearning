@@ -15,16 +15,20 @@ export default new Router({
           component: () => import('@/views/home/index'),
           children: [{
             path: '',
-            component: () => import('@/views/home/mainView')
+            component: () => import('@/views/home/mainView'),
+            meta: []
           }, {
             path: 'job',
-            component: () => import('@/views/content/job')
+            component: () => import('@/views/content/job'),
+            meta: ['index', 'job']
           }, {
             path: 'date',
-            component: () => import('@/views/content/date')
+            component: () => import('@/views/content/date'),
+            meta: ['index,date']
           }, {
             path: 'rent',
-            component: () => import('@/views/content/rent')
+            component: () => import('@/views/content/rent'),
+            meta: ['index', 'rent']
           }
           ]
         },

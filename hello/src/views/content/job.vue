@@ -13,7 +13,7 @@
       <el-col :span="12">
         <p>拉勾</p>
         <ul>
-         <li v-for="job in jobs" :key="job.id">{{job.name}}</li>
+         <li v-for="job in jobs" :key="job.id">{{job.job_name}}</li>
         </ul>
       </el-col>
       <el-col :span="12">
@@ -45,16 +45,16 @@ export default {
   methods: {
     getJobs: function () {
       fetchJobs().then(response => {
-        console.log(response.data.dataList)
-        this.jobs = response.data.dataList
+        console.log(response)
       }).catch(error => {
         console.log(error)
-        this.$message.error('api failed')
+        this.$message.error(error)
       })
     },
     getLiepinJobs: function () {
       fetchLiepinJobs().then(response => {
-        console.log(response.data.dataList)
+        this.jobs = response.data.results
+
       })
     }
   }
