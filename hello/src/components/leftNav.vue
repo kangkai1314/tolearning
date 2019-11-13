@@ -8,11 +8,11 @@
         </template>
         <el-menu-item-group>
           <span slot="title">分组一</span>
-          <el-menu-item index="/bilibili">b站</el-menu-item>
-          <el-menu-item index="/zhihu">zhihu</el-menu-item>
+          <el-menu-item index="/study/bilibili">b站</el-menu-item>
+          <el-menu-item index="/study/zhihu">zhihu</el-menu-item>
         </el-menu-item-group>
         <el-menu-item-group title="分组2">
-          <el-menu-item index="soul">soul</el-menu-item>
+          <el-menu-item index="/study/soul">soul</el-menu-item>
         </el-menu-item-group>
         <el-submenu index="1-4">
           <span slot="title">选项4</span>

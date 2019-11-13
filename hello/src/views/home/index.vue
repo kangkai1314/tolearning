@@ -51,6 +51,11 @@ export default {
   created () {
     // this.processJson()
   },
+  computed:{
+    sidebar(){
+      return this.$store.state.app.sidebar
+    }
+  },
   methods: {
     handleClose (done) {
       this.$confirm('确认关闭？')

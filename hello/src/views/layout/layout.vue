@@ -1,12 +1,13 @@
 <template>
-    <div class="main-view">
-      <p>this is main</p>
-    </div>
+<div :class="classObj" class="app-wrapper">
+
+
+</div>
 </template>
 
 <script>
 export default {
-  name: 'main'
+  name: 'layout'
 }
 </script>
 

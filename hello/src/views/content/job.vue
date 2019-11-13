@@ -54,13 +54,12 @@ export default {
     getLiepinJobs: function () {
       fetchLiepinJobs().then(response => {
         this.jobs = response.data.results
-
       })
     }
   }
 }
 </script>
 
-<style scoped>
+<style scoped >
 
 </style>
