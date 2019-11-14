@@ -8,6 +8,7 @@ import App from './App'
 import router from './router'
 import store from './store'
 import './permission' // 权限控制
+import './icons'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI, {locale})

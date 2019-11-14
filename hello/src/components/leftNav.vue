@@ -35,8 +35,8 @@
     <el-menu
       :default-active="$route.path"
       :collapse="isCollapse"
-      background-color="black"
-      text-color="white"
+      background-color="white"
+      text-color="black"
       active-text-color="red"
       :collapse-transition="false"
       mode="vertical"

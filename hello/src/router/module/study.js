@@ -1,7 +1,7 @@
 const study = {
   path: '/study',
   component: () => import('@/views/home/index'),
-  meta: {title: '学习'},
+  meta: {title: '学习', icon: 'user'},
   children: [ {
     path: 'bilibili',
     component: () => import('@/views/sim/bilibili'),
