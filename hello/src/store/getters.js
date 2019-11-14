@@ -1,5 +1,6 @@
 const getters = {
-  app_routers: state => state.app.routes
+  app_routers: state => state.app.routes,
+  sidebar: state => state.app.sidebar
 }
 
 export default getters

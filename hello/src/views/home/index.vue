@@ -51,8 +51,8 @@ export default {
   created () {
     // this.processJson()
   },
-  computed:{
-    sidebar(){
+  computed: {
+    sidebar () {
       return this.$store.state.app.sidebar
     }
   },
