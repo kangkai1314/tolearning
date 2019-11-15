@@ -238,13 +238,14 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+  @import "../../../styles/btn";
   .nav-list{
     margin-left: 20px;
     margin-right: 20px;
   }
   .zhihu-container{
-
+    @include colorBtn('blue')
   }
   .el-tag{
     margin: 10px;

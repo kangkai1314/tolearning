@@ -2,6 +2,7 @@
     <div class="soul-chat-view" style="text-align: center ;width: 100%;background-color:#b3d8ff" >
       <div class="soul-chat-content" style="margin-left: 120px;margin-right:120px;height: 100%">
         <el-container>
+
           <el-aside style="background-color: #f4f7fa">
             <div class="person-view" style="padding: 10px">
               <el-row>
@@ -18,6 +19,7 @@
                     <i class="el-icon-setting" slot="reference"></i>
                   </el-popover>
                 </el-col>
+                <el-col><svg-icon iconClass="money"></svg-icon></el-col>
               </el-row>
 
             </div>

@@ -9,6 +9,7 @@ import router from './router'
 import store from './store'
 import './permission' // 权限控制
 import './icons'
+import '@/styles/index.scss'// global css
 
 Vue.config.productionTip = false
 Vue.use(ElementUI, {locale})

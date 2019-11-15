@@ -10,7 +10,12 @@
             <left-nav></left-nav>
            </el-aside>
            <el-main>
-            <router-view></router-view>
+             <tags-view></tags-view>
+             <transition>
+               <keep-alive :include="cachedViews">
+                 <router-view :key="key"></router-view>
+               </keep-alive>
+             </transition>
            </el-main>
          </el-container>
      </el-container>
@@ -23,9 +28,10 @@ import TopNav from '../../components/topNav'
 import VueJsonPretty from 'vue-json-pretty'
 import LeftNav from '../../components/leftNav'
 import MainView from './mainView'
+import TagsView from '../../components/TagsView/index'
 export default {
   name: 'index',
-  components: {MainView, LeftNav, TopNav, VueJsonPretty},
+  components: {TagsView, MainView, LeftNav, TopNav, VueJsonPretty},
   data () {
     return {
       defaultProps: {
@@ -54,6 +60,12 @@ export default {
   computed: {
     sidebar () {
       return this.$store.state.app.sidebar
+    },
+    cachedViews () {
+      return this.$store.state.tagsView.cachedViews
+    },
+    key () {
+      return this.$route.fullPath
     }
   },
   methods: {
