@@ -17,9 +17,9 @@
 </template>
 
 <script>
-    export default {
-        name: "backTop"
-    }
+export default {
+  name: 'backTop'
+}
 </script>
 
 <style scoped>

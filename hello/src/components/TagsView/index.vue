@@ -81,7 +81,7 @@ export default {
       routes.forEach(route => {
         console.log(route)
         if (route.meta && route.meta.affix) {
-          console.log(route.meta,route.meta.affix)
+          console.log(route.meta, route.meta.affix)
           const tagPath = path.resolve(basePath, route.path)
           tags.push({
             fullPath: tagPath,

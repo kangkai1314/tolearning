@@ -6,10 +6,19 @@ const request = axios.create(
   }
 )
 
-request.interceptors.response.use(function (response) {
-  return response
-}, function (error) {
-  return error
+request.interceptors.request.use(config => {
+  return config
+}, error => {
+  return Promise.reject(error)
 })
-
 export default request
+
+request.interceptors.response.use(response => {
+  console.log('call api')
+  console.log(response)
+  return response
+}, error => {
+  console.log(error)
+  console.log(error.code)
+  return Promise.reject(error)
+})

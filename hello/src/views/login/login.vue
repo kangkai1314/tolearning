@@ -24,6 +24,8 @@
 </template>
 
 <script>
+import {LoginByUserName} from '../../api/login'
+
 export default {
   name: 'login',
   data () {
@@ -48,6 +50,12 @@ export default {
       this.$refs[formName].validate(valid => {
         if (valid) {
           console.log(this.login)
+          LoginByUserName(this.login.username, this.login.password).then(response => {
+            this.$message.success('login success')
+          }).error(error => {
+            console.log(error)
+            this.$message.error(error)
+          })
         } else {
           this.$message.error('error')
           return false
