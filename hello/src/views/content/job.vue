@@ -13,13 +13,13 @@
       <el-col :span="12">
         <p>拉勾</p>
         <ul>
-         <li v-for="job in jobs" :key="job.id">{{job.job_name}}</li>
+         <li v-for="job in jobs" :key="job.id">{{job.position_name}}</li>
         </ul>
       </el-col>
       <el-col :span="12">
         <p>猎聘</p>
         <ul>
-          <li>python</li>
+          <li v-for="job in liePinjobs" :key="job.id">{{job.job_name}}</li>
         </ul>
       </el-col>
     </el-row>
@@ -45,7 +45,8 @@ export default {
   methods: {
     getJobs: function () {
       fetchJobs().then(response => {
-        console.log(response)
+        console.log(response.data)
+        this.jobs = response.data.data
       }).catch(error => {
         console.log(error)
         this.$message.error(error)
@@ -53,7 +54,8 @@ export default {
     },
     getLiepinJobs: function () {
       fetchLiepinJobs().then(response => {
-        this.jobs = response.data.results
+        console.log(response)
+        this.liePinjobs = response.data.results
       })
     }
   }

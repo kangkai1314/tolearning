@@ -50,7 +50,8 @@ export default {
       this.$refs[formName].validate(valid => {
         if (valid) {
           console.log(this.login)
-          LoginByUserName(this.login.username, this.login.password).then(response => {
+          let postData = JSON.parse(JSON.stringify(this.login))
+          LoginByUserName(postData).then(response => {
             this.$message.success('login success')
           }).error(error => {
             console.log(error)
