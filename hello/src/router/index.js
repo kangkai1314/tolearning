@@ -6,7 +6,8 @@ export const constantRouter = [
   {
     path: '/',
     component: () => import('@/views/home/index'),
-    children: []
+    children: [],
+    name: '首页'
   },
   {
     path: '/login',

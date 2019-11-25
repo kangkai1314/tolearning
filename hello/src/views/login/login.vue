@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import {LoginByUserName} from '../../api/login'
+import {setCookie} from '../../utils/cookie'
 
 export default {
   name: 'login',
@@ -51,11 +51,13 @@ export default {
         if (valid) {
           console.log(this.login)
           let postData = JSON.parse(JSON.stringify(this.login))
-          LoginByUserName(postData).then(response => {
+          this.$store.dispatch('login', postData).then(accessToken => {
+            console.log(accessToken)
+            setCookie('access_token', accessToken)
             this.$message.success('login success')
-          }).error(error => {
+            this.$router.push({name: '首页'})
+          }).catch(error => {
             console.log(error)
-            this.$message.error(error)
           })
         } else {
           this.$message.error('error')

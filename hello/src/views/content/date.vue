@@ -1,12 +1,14 @@
 <template>
     <div class="date-view">
-      <p>this is date view</p>
+      <date-menu></date-menu>
     </div>
 </template>
 
 <script>
+import DateMenu from './date/component/dateMenu'
 export default {
-  name: 'date'
+  name: 'date',
+  components: {DateMenu}
 }
 </script>
 
