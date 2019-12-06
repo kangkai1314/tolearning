@@ -22,7 +22,11 @@
               <el-dropdown-item>设置</el-dropdown-item>
               <el-dropdown-item>退出登录</el-dropdown-item>
             </el-dropdown-menu>
+            <right-panel v-if="showSettings">
+              <settings />
+            </right-panel>
           </el-dropdown>
+
         </el-col>
       </el-row>
 
@@ -31,9 +35,11 @@
 
 <script>
 import Breadcrumb from './Breadcrumb/index'
+import Settings from './Settings/index'
+import RightPanel from './RightPanel/index'
 export default {
   name: 'topNav',
-  components: {Breadcrumb},
+  components: {RightPanel, Settings, Breadcrumb},
   data () {
     return {
       menus: [{id: 1, name: '首页', path: '/'}, {id: 2, name: '工作', path: '/work/job'}, {id: 3, name: '租房', path: '/work/rent'}, {id: 4, name: '相亲', path: '/work/date'}],

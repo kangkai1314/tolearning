@@ -1,26 +1,39 @@
 <template>
-    <div class="wraper">
+    <!--<div class="wraper">-->
 
-     <el-container>
-       <el-header style="height: 70px" >
-        <top-nav></top-nav>
-       </el-header>
-         <el-container style="height: 570px" class="page-component__scroll">
-           <el-aside style="width:auto">
-            <left-nav></left-nav>
-           </el-aside>
-           <el-main>
-             <tags-view></tags-view>
-             <transition>
-               <keep-alive :include="cachedViews">
-                 <router-view :key="key"></router-view>
-               </keep-alive>
-             </transition>
-           </el-main>
-         </el-container>
-     </el-container>
+     <!--<el-container>-->
+       <!--<el-header style="height: 70px" >-->
+        <!--<top-nav></top-nav>-->
+       <!--</el-header>-->
+         <!--<el-container style="height: 570px" class="page-component__scroll">-->
+           <!--<el-aside style="width:auto">-->
+            <!--<left-nav></left-nav>-->
+           <!--</el-aside>-->
+           <!--<el-main>-->
+             <!--<tags-view></tags-view>-->
+             <!--<transition>-->
+               <!--<keep-alive :include="cachedViews">-->
+                 <!--<router-view :key="key"></router-view>-->
+               <!--</keep-alive>-->
+             <!--</transition>-->
+           <!--</el-main>-->
+         <!--</el-container>-->
+     <!--</el-container>-->
 
+    <!--</div>-->
+  <div :class="classObj" class="app-wrapper">
+    <div class="drawer-bg" />
+    <left-nav></left-nav>
+    <div :class="{hasTagsView:needTagsView}" class="main-container">
+      <div :class="{'fixed-header':fixedHeader}">
+        <navbar></navbar>
+        <tags-view v-if="needTagsView" />
+      </div>
+      <right-panel v-if="showSettings">
+        <settings></settings>
+      </right-panel>
     </div>
+  </div>
 </template>
 
 <script>
@@ -29,9 +42,16 @@ import VueJsonPretty from 'vue-json-pretty'
 import LeftNav from '../../components/leftNav'
 import MainView from './mainView'
 import TagsView from '../../components/TagsView/index'
+import RightPanel from '../../components/RightPanel/index'
+import { mapState } from 'vuex'
+import ResizeMixin from './mixin/ResizeHandler'
+import Settings from '../../components/Settings/index'
+import Navbar from "../../components/Navbar";
+
 export default {
   name: 'index',
-  components: {TagsView, MainView, LeftNav, TopNav, VueJsonPretty},
+  components: {Navbar, Settings, RightPanel, TagsView, MainView, LeftNav, TopNav, VueJsonPretty},
+  mixins: [ResizeMixin],
   data () {
     return {
       defaultProps: {
@@ -66,6 +86,21 @@ export default {
     },
     key () {
       return this.$route.fullPath
+    },
+    ...mapState({
+      sidebar: state => state.app.sidebar,
+      // device: state => state.app.device,
+      showSettings: state => state.settings.showSettings,
+      needTagsView: state => state.settings.tagsView,
+      fixedHeader: state => state.settings.fixedHeader
+    }),
+    classObj () {
+      return {
+        hideSidebar: !this.sidebar.opened,
+        openSidebar: this.sidebar.opened,
+        withoutAnimation: this.sidebar.withoutAnimation
+        // mobile: this.device === 'mobile'
+      }
     }
   },
   methods: {

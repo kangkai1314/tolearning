@@ -1,5 +1,8 @@
 <template>
   <div class="left-view">
+    <hamburger  :toggle-click="toggleSideBar"
+                :is-active="sidebar.opened"
+                class="hamburger-container"></hamburger>
     <!--<el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse" :router="true">-->
       <!--<el-submenu index="1">-->
         <!--<template slot="title">-->
@@ -54,10 +57,11 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import SidebarItem from '../views/layout/components/Sidebar/SidebarItem'
+import Hamburger from './Hamburger/index'
 
 export default {
   name: 'leftNav',
-  components: {SidebarItem},
+  components: {Hamburger, SidebarItem},
   data () {
     return {
     }
