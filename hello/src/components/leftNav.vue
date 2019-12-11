@@ -91,5 +91,8 @@ export default {
 </script>
 
 <style scoped>
+  .left-view{
+    display: flex;
+  }
 
 </style>

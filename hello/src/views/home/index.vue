@@ -1,59 +1,25 @@
 <template>
-    <!--<div class="wraper">-->
-
-     <!--<el-container>-->
-       <!--<el-header style="height: 70px" >-->
-        <!--<top-nav></top-nav>-->
-       <!--</el-header>-->
-         <!--<el-container style="height: 570px" class="page-component__scroll">-->
-           <!--<el-aside style="width:auto">-->
-            <!--<left-nav></left-nav>-->
-           <!--</el-aside>-->
-           <!--<el-main>-->
-             <!--<tags-view></tags-view>-->
-             <!--<transition>-->
-               <!--<keep-alive :include="cachedViews">-->
-                 <!--<router-view :key="key"></router-view>-->
-               <!--</keep-alive>-->
-             <!--</transition>-->
-           <!--</el-main>-->
-         <!--</el-container>-->
-     <!--</el-container>-->
-
-    <!--</div>-->
   <div :class="classObj" class="app-wrapper">
-    <div class="drawer-bg" />
     <left-nav></left-nav>
-    <div :class="{hasTagsView:needTagsView}" class="main-container">
-      <div :class="{'fixed-header':fixedHeader}">
-        <navbar></navbar>
-        <tags-view v-if="needTagsView" />
-      </div>
-      <right-panel v-if="showSettings">
-        <settings></settings>
-      </right-panel>
-    </div>
+    <navbar></navbar>
+
   </div>
 </template>
 
 <script>
-import TopNav from '../../components/topNav'
-import VueJsonPretty from 'vue-json-pretty'
-import LeftNav from '../../components/leftNav'
-import MainView from './mainView'
-import TagsView from '../../components/TagsView/index'
-import RightPanel from '../../components/RightPanel/index'
+
 import { mapState } from 'vuex'
 import ResizeMixin from './mixin/ResizeHandler'
-import Settings from '../../components/Settings/index'
+import LeftNav from "../../components/leftNav";
 import Navbar from "../../components/Navbar";
 
 export default {
   name: 'index',
-  components: {Navbar, Settings, RightPanel, TagsView, MainView, LeftNav, TopNav, VueJsonPretty},
+  components: {Navbar, LeftNav},
   mixins: [ResizeMixin],
   data () {
     return {
+      message: '{msg}',
       defaultProps: {
         children: 'children',
         label: 'label'
@@ -163,6 +129,13 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.app-wrapper{
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+
 
 </style>
