@@ -5,8 +5,7 @@ Vue.use(Router)
 export const constantRouter = [
   {
     path: '/',
-    component: () => import('@/views/home/index'),
-    children: [],
+    component: () => import('@/views/test/index'),
     name: '首页'
   },
   {
