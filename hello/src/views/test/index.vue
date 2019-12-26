@@ -64,16 +64,31 @@ export default {
       }
     }
   },
+  created () {
+    console.log(this)
+    console.log(window)
+    this.testFunc()
+  },
   methods: {
+    testFunc: function () {
+      let a = {
+        c: '12',
+        d: 1,
+        f: {
+          h: 1,
+          name: 'addd'
+        }
+      }
+      console.log(a)
+    },
     showMessage: function () {
       setTimeout(this.show, 3000)
       let a = document.getElementById('p')
       console.log(a)
       this.newPro().then(data => {
-
         console.log(data)
       }, err => {
-        console.log(error)
+        console.log(err)
       })
     },
     show: function () {
@@ -138,6 +153,10 @@ export default {
   }
   .blue{
     color: cyan;
+  }
+  ul{
+    overflow: hidden;
+    z-index: 0;
   }
 
 </style>
