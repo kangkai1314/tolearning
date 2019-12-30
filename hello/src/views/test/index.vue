@@ -74,12 +74,30 @@ export default {
       let a = {
         c: '12',
         d: 1,
+        b: undefined,
         f: {
           h: 1,
           name: 'addd'
-        }
+        },
+        h: new Date()
       }
       console.log(a)
+      let b = JSON.parse(JSON.stringify(a))
+      console.log(b)
+      let d = Object.assign({}, a)
+      console.log(d)
+      d.c = 13
+      console.log(a)
+      console.log(d)
+      console.log(b)
+      function Parent() {
+
+      }
+      let p=new Parent()
+      console.log(p)
+      console.log(Parent.constructor)
+      console.log(Parent.prototype)
+
     },
     showMessage: function () {
       setTimeout(this.show, 3000)
