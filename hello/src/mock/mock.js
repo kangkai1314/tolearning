@@ -9,4 +9,15 @@ function jobs () {
     })
   }
 }
+function test1 () {
+  return {
+    data: Mock.mock({
+      'dataList|10': {
+        'testId|+2': 1,
+        'name': '@string'
+      }
+    })
+  }
+}
 Mock.mock('/api/jobs', /get/i, jobs)
+Mock.mock('/api/test', /get/i, test1)

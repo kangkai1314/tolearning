@@ -39,6 +39,11 @@
             info {{i}}
           </li>
         </ul>
+        <el-button @click="funcTest">Test</el-button>
+        <div class="test_view">
+          12312312
+          <p>this is test info </p>
+        </div>
 
       </el-main>
 
@@ -90,14 +95,13 @@ export default {
       console.log(a)
       console.log(d)
       console.log(b)
-      function Parent() {
+      function Parent () {
 
       }
-      let p=new Parent()
+      let p = new Parent()
       console.log(p)
       console.log(Parent.constructor)
       console.log(Parent.prototype)
-
     },
     showMessage: function () {
       setTimeout(this.show, 3000)
@@ -134,8 +138,24 @@ export default {
     newPro: function () {
       return new Promise((resolve, reject) => {
         console.log('new promise')
-        reslove()
+
       })
+    },
+    funcTest: function () {
+      let str = 'annnannaxcz'
+      for (let s of str) {
+        console.log(s)
+      }
+      let s = [...str]
+
+      console.log(s)
+      let func1 = i => { console.log(i) }
+      let func2 = () => ({id: '1', a: '2'})
+      func1('jiantou')
+      console.log(func2())
+      (function () {
+        console.log('niminghanshu ')
+      }())
     }
   },
   computed: {
@@ -175,6 +195,13 @@ export default {
   ul{
     overflow: hidden;
     z-index: 0;
+  }
+
+  .test_view{
+    font-size: 12px;
+  }
+  *{
+    font-size: 18px;
   }
 
 </style>
