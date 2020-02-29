@@ -2,13 +2,13 @@
   <div class="test_page_view">
     <el-container>
       <el-header style="position: fixed;text-align: center">
-        <el-dropdown style="padding: 20px">
+        <el-dropdown style="padding: 20px" @command="jump">
   <span class="el-dropdown-link">
     设置<i class="el-icon-arrow-down el-icon--right"></i>
   </span>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item icon="el-icon-setting" >主题</el-dropdown-item>
-            <el-dropdown-item icon="el-icon-time" >个性化</el-dropdown-item>
+            <el-dropdown-item icon="el-icon-time" command="/person">个性化</el-dropdown-item>
             <el-dropdown-item icon="el-icon-exit">退出</el-dropdown-item>
 
           </el-dropdown-menu>
@@ -156,6 +156,11 @@ export default {
       (function () {
         console.log('niminghanshu ')
       }())
+    },
+    jump:function (command) {
+      console.log('this is jumop')
+
+     this.$router.push(command)
     }
   },
   computed: {

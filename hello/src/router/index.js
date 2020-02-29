@@ -12,7 +12,11 @@ export const constantRouter = [
     path: '/login',
     component: () => import('@/views/login/login'),
     hidden: true
-  }, {
+  },{
+  path:'/person',
+    component:()=>import('@/views/person/index')
+  },
+  {
     path: '/404',
     component: () => import('@/views/errorPage/404'),
     name: '404',

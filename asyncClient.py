@@ -17,7 +17,7 @@ def aysnc_fetch(url):
 def main():
     url='http://www.baidu.com'
     s=sync_fecth(url)
-    print s
+    print(s)
 
 
 if __name__ == '__main__':
