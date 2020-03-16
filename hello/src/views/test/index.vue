@@ -1,7 +1,7 @@
 <template>
   <div class="test_page_view">
     <el-container>
-      <el-header style="position: fixed;text-align: center">
+      <el-header >
         <el-dropdown style="padding: 20px">
   <span class="el-dropdown-link">
     设置<i class="el-icon-arrow-down el-icon--right"></i>
@@ -31,7 +31,7 @@
             <el-input v-model="obj.value2"></el-input>
           </el-form-item>
           <el-form-item label="合计">
-           <el-input v-model="obj.values"></el-input>
+            <el-input v-model="obj.values"></el-input>
           </el-form-item>
         </el-form>
         <ul>
@@ -46,6 +46,7 @@
         </div>
 
       </el-main>
+
 
     </el-container>
 

@@ -19,5 +19,16 @@ function test1 () {
     })
   }
 }
+function menus () {
+  return {
+    data: Mock.mock({
+      'dataList|10': {
+        'id|+1': 1,
+        'name': '@string'
+      }
+    })
+  }
+}
 Mock.mock('/api/jobs', /get/i, jobs)
 Mock.mock('/api/test', /get/i, test1)
+Mock.mock('/api/menu', /get/i, menus)
