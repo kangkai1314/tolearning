@@ -1,5 +1,5 @@
 <template>
-    <el-menu mode="horizontal" style="width: 100%">
+    <el-menu mode="horizontal" style="width: 100%" class="menu_class">
       <el-menu-item v-for="m in menus" :key="m.id" :index="m.id" >{{m.name}}</el-menu-item>
       <el-menu-item style="float: right"><el-dropdown>
       <el-avatar class="el-dropdown-link">
@@ -43,6 +43,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+  .menu_class{
+    background-color: #409EFF;
+  }
+
 
 </style>
