@@ -13,7 +13,7 @@ import store from './store'
 import './permission' // 权限控制
 import './icons'
 import '@/styles/index.scss'// global css
-import '@/mock/mock.js'
+// import '@/mock/mock.js'
 Vue.config.productionTip = false
 Vue.use(ElementUI, { locale })
 Vue.use(VueI18n)

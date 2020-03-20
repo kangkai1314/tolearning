@@ -107,9 +107,16 @@ export default {
       let b = {}
       console.log(Object.is(a, b))
       console.log(a === b)
+      a.hello = 'hello1'
+      a.test = 'test2'
+      for (let i in a) {
+        console.log(i)
+      }
+      for (let i of a) {
+        console.log(i)
+      }
     },
-    showPromise:function () {
-
+    showPromise: function () {
 
     }
 

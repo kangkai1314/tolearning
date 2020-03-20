@@ -7,12 +7,16 @@
             <kmenu></kmenu>
           </el-header>
           <el-container >
-            <el-aside class="aside" style="position: fixed;top:50px">
+            <el-aside class="aside" style="position: fixed;top:60px;height:700px;overflow: scroll;z-index: 2;background-color: #999999">
               <ul>
-                <li v-for="i in 100">{{i}}</li>
+                <h3>小说篇章</h3>
+                <li v-for="i in 100">
+                  <el-card class="contegy">第{{i}}章</el-card>
+                </li>
               </ul>
             </el-aside>
-            <el-main class="main"  style="position: relative;left: 250px;top:50px;z-index: -1">
+            <el-main class="main"  style="position: relative;left: 250px;top:50px">
+              <h1> 测试内容</h1>
               <el-row>
                 <el-col :span="12" >
                   <el-card class="content">
@@ -20,7 +24,6 @@
                       <h2>tag list</h2>
                       <el-tag v-for="i in tags" :key="i" style="margin: 10px" :type="i.name" @click="showMess(i)">{{i.name}}</el-tag>
                     </div>
-
                   </el-card>
 
                 </el-col>
@@ -83,6 +86,8 @@ import Kmenu from './components/Kmenu'
 import Fixed from './components/fixed'
 import Kform from './components/Kform'
 import FooterArea from './components/footer'
+import {fetchJobs} from '../../api/job'
+
 export default {
   name: 'index',
   components: {FooterArea, Kform, Fixed, Kmenu},
@@ -96,7 +101,15 @@ export default {
     showMess: function (data) {
       console.log(data)
       this.$message.success('show tag info ' + data.name)
+    },
+    getUsers: function () {
+      fetchJobs().then(response => {
+        console.log(response)
+      })
     }
+  },
+  created () {
+    this.getUsers()
   }
 }
 </script>
@@ -110,7 +123,8 @@ p{
 .header{
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
+  padding: 0;
 }
   .aside{
   }
@@ -153,6 +167,23 @@ p{
   }
   p.main-content:before{
     content: url(https://pic4.zhimg.com/50/v2-043d3c1608240895beb4d6c12f88b82a_400x224.jpg) ;
+  }
+  h1{
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  ul{
+    list-style-type: none;
+    padding: 0;
+  }
+  li{
+    margin-bottom: 5px;
+  }
+  .contegy:hover{
+    color: #13ce66;
+  }
+  .contegy:active{
+    color: #5daf34;
   }
 
 </style>

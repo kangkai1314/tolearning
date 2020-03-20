@@ -47,7 +47,6 @@
 
       </el-main>
 
-
     </el-container>
 
   </div>
@@ -139,7 +138,6 @@ export default {
     newPro: function () {
       return new Promise((resolve, reject) => {
         console.log('new promise')
-
       })
     },
     funcTest: function () {

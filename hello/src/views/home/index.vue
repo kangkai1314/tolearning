@@ -10,8 +10,8 @@
 
 import { mapState } from 'vuex'
 import ResizeMixin from './mixin/ResizeHandler'
-import LeftNav from "../../components/leftNav";
-import Navbar from "../../components/Navbar";
+import LeftNav from '../../components/leftNav'
+import Navbar from '../../components/Navbar'
 
 export default {
   name: 'index',
@@ -135,7 +135,5 @@ export default {
   width: 100%;
   position: relative;
 }
-
-
 
 </style>

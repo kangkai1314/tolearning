@@ -16,7 +16,16 @@ export const constantRouter = [
   {
     path: '/kangkai',
     component: () => import('@/views/kangkai/index')
+  }, {
+    path: '/zhihu',
+    component: () => import('@/views/zhihu/index'),
+    children: [{
+      path: 'index',
+      component: () => import('@/views/zhihu/explore')
+    }]
+
   },
+
   {
     path: '/404',
     component: () => import('@/views/errorPage/404'),

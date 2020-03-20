@@ -48,5 +48,4 @@ export default {
     background-color: #409EFF;
   }
 
-
 </style>
