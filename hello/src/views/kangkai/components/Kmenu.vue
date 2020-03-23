@@ -35,8 +35,8 @@ export default {
   },
   methods: {
     getMenus: function () {
-      fetchMenus().then(resposne => {
-        console.log(resposne)
+      fetchMenus().then(response => {
+        console.log(response)
       })
     }
   }

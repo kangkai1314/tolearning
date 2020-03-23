@@ -24,7 +24,7 @@ export default {
     width: 800px;
   }
   .zhihu-content{
-    background-color: transparent;
+    background-color: #f4f4f5;
     display: flex;
 
   }

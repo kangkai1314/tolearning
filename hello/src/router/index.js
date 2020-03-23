@@ -19,10 +19,14 @@ export const constantRouter = [
   }, {
     path: '/zhihu',
     component: () => import('@/views/zhihu/index'),
+    redirect: '/zhihu/index',
     children: [{
       path: 'index',
       component: () => import('@/views/zhihu/explore')
-    }]
+    }, {
+      path: 'find',
+      component: () => import('@/views/zhihu/find')
+    } ]
 
   },
 

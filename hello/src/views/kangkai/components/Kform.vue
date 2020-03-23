@@ -49,6 +49,8 @@
 </template>
 
 <script>
+import {postSubmit} from '../../../api/test'
+
 export default {
   name: 'Kform',
   data () {
@@ -67,6 +69,15 @@ export default {
       },
       options: [{id: 1}, {id: 2}, {id: 3}, {id: 4}],
       checklist: ['恐怖', '惊悚', '爱情', '动作']
+    }
+  },
+  methods: {
+    submit: function () {
+      console.log(this.obj)
+      postSubmit(this.obj).then(response => {
+        console.log(response)
+        this.$message.info(response)
+      })
     }
   }
 }

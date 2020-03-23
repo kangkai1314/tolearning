@@ -1,14 +1,32 @@
 <template>
-      <el-row style="width: 100%;margin: 5px auto;padding: 0">
-        <el-col :span="16" style="margin-right: 5px" >
-          <zhihu-banner></zhihu-banner>
+  <div class="ex_view" style="margin: auto">
+    <el-row style="padding: 0;margin: 0">
+      <el-col :span="18" >
+        <zhihu-banner></zhihu-banner>
+        <el-row>
+          <zhihu-content></zhihu-content>
+        </el-row>
 
-        </el-col>
-        <el-col :span="6">
-          <zhihu-modules></zhihu-modules>
-        </el-col>
+      </el-col>
+      <el-col :span="6" >
+        <zhihu-modules></zhihu-modules>
+        <el-row style="margin-top: 10px;background-color: white; width: 296px;">
+          <div class="author_view" style="display: flex;justify-content: space-around">
+            <p><i class="el-icon-phone"> </i>作者中心</p>
+            <p>去开通<i class="el-icon-arrow-right"></i></p>
 
-      </el-row>
+          </div>
+
+        </el-row>
+        <el-row style="padding: 0;margin-top: 10px">
+          <zhihu-funcs></zhihu-funcs>
+
+        </el-row>
+      </el-col>
+
+    </el-row>
+
+  </div>
 
 </template>
 
@@ -16,9 +34,10 @@
 import ZhihuBanner from './component/zhihuBanner'
 import ZhihuContent from './component/zhihuContent'
 import ZhihuModules from './component/zhihuModules'
+import ZhihuFuncs from "./component/zhihuFuncs";
 export default {
   name: 'explore',
-  components: {ZhihuModules, ZhihuContent, ZhihuBanner}
+  components: {ZhihuFuncs, ZhihuModules, ZhihuContent, ZhihuBanner}
 }
 </script>
 
