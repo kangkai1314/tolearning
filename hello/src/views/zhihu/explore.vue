@@ -1,6 +1,6 @@
 <template>
   <div class="ex_view" style="margin: auto">
-    <el-row style="padding: 0;margin: 0">
+    <el-row >
       <el-col :span="18" >
         <zhihu-banner></zhihu-banner>
         <el-row>
@@ -34,7 +34,7 @@
 import ZhihuBanner from './component/zhihuBanner'
 import ZhihuContent from './component/zhihuContent'
 import ZhihuModules from './component/zhihuModules'
-import ZhihuFuncs from "./component/zhihuFuncs";
+import ZhihuFuncs from './component/zhihuFuncs'
 export default {
   name: 'explore',
   components: {ZhihuFuncs, ZhihuModules, ZhihuContent, ZhihuBanner}

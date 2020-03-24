@@ -1,7 +1,8 @@
 <template>
-    <el-tabs>
+    <el-tabs style="background-color: white;width: 796px">
       <el-tab-pane label="推荐">
         <div class="content">
+          <zhihu-item></zhihu-item>
         </div>
       </el-tab-pane>
       <el-tab-pane label="关注"></el-tab-pane>
@@ -11,9 +12,10 @@
 
 <script>
 import ZhihuModules from './zhihuModules'
+import ZhihuItem from './zhihuItem'
 export default {
   name: 'zhihuContent',
-  components: {ZhihuModules}
+  components: {ZhihuItem, ZhihuModules}
 }
 </script>
 

@@ -86,15 +86,6 @@ export default {
         console.log(i)
       }
       console.log([3, 15, 8, 29, 102, 22].sort())
-      let name = 'Tom';
-      (function () {
-        if (typeof name === 'undefined') {
-          var name = 'Jack'
-          console.log('Goodbye ' + name)
-        } else {
-          console.log('Hello ' + name)
-        }
-      })()
     },
     showStr: function () {
       let a = 'hello'

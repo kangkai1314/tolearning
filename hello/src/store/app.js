@@ -10,9 +10,18 @@ const app = {
     routes: [],
     device: 'desktop',
     language: Cookies.get('language') || 'en',
-    size: Cookies.get('size') || 'medium'
+    size: Cookies.get('size') || 'medium',
+    topmenu: {
+      scrolled: false
+    }
   },
   mutations: {
+    SCROLL_MENU: state => {
+      state.topmenu.scrolled = true
+    },
+    INIT_MENU: state => {
+      state.topmenu.scrolled = false
+    },
     TOGGLE_SIDEBAR: state => {
       state.sidebar.opened = !state.sidebar.opened
       state.sidebar.withoutAnimation = false

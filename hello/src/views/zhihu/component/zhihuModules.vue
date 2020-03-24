@@ -19,6 +19,7 @@ export default {
 .zhihu-modules {
   width: 296px;
   background-color: white;
+  margin-top: 10px;
 }
 .subview {
 }

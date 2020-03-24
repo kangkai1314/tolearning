@@ -10,7 +10,7 @@
             <el-aside class="aside" style="position: fixed;top:60px;height:700px;overflow: scroll;z-index: 2;background-color: #999999">
               <ul>
                 <h3>小说篇章</h3>
-                <li v-for="i in 100">
+                <li v-for="i in 100" :key="i">
                   <el-card class="contegy">第{{i}}章</el-card>
                 </li>
               </ul>

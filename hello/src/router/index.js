@@ -26,7 +26,10 @@ export const constantRouter = [
     }, {
       path: 'find',
       component: () => import('@/views/zhihu/find')
-    } ]
+    }, {
+      path: 'question',
+      component: () => import('@/views/zhihu/question')
+    }]
 
   },
 

@@ -40,5 +40,8 @@ export default {
     color: #fff;
     background-color: #0084ff;
   }
+  .menu-class{
+    width: 100%;
+  }
 
 </style>

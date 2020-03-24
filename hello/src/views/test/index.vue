@@ -152,9 +152,6 @@ export default {
       let func2 = () => ({id: '1', a: '2'})
       func1('jiantou')
       console.log(func2())
-      (function () {
-        console.log('niminghanshu ')
-      }())
     }
   },
   computed: {
