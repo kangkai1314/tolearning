@@ -1,4 +1,6 @@
 <template>
+  <div class="top-header">
+
     <el-menu mode="horizontal" :default-active="1" class="menu_class">
 
         <el-menu-item><el-image></el-image></el-menu-item>
@@ -10,6 +12,7 @@
         <el-menu-item><el-button style="background-color: #20a0ff;color: white">提问</el-button></el-menu-item>
 
     </el-menu>
+  </div>
 </template>
 
 <script>
@@ -21,6 +24,13 @@ export default {
 <style scoped lang="scss">
   .menu-class{
     width: 100%;
+  }
+  .top-header{
+    width: 100%;
+    margin: 0 110px;
+    background-color: white;
+    display: flex;
+    z-index: 2;
   }
 
 </style>

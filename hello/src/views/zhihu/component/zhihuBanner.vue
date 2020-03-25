@@ -1,5 +1,5 @@
 <template>
-    <el-image :src="url" style="width:694px "></el-image>
+    <el-image :src="url" style="width:inherit;margin-top: 10px;margin-right: 10px "></el-image>
 </template>
 
 <script>

@@ -2,10 +2,11 @@
 <template>
     <div class="zhihu-page">
       <!--//<top-menu style="margin: auto" class="top-fixed"></top-menu>-->
-      <transition name="fade">
-        <component :is="com"  class="top-fixed"></component>
 
-      </transition>
+          <!--<transition name="fade">-->
+        <component :is="com" class="top-fixed" ></component>
+          <!--</transition>-->
+
       <div class="zhihu-content" >
        <router-view></router-view>
       </div>
@@ -31,10 +32,10 @@ export default {
   methods: {
     scroll1: function () {
       // console.log(document.documentElement.scrollTop || document.body.scrollTop)
-      if (document.documentElement.scrollTop >60){
+      if (document.documentElement.scrollTop >70){
         this.$store.commit('SCROLL_MENU')
       }
-      if(document.documentElement.scrollTop <60){
+      if(document.documentElement.scrollTop <70){
         this.$store.commit('INIT_MENU')
 
       }
