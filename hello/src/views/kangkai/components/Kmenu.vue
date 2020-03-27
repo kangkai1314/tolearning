@@ -1,6 +1,6 @@
 <template>
-    <el-menu mode="horizontal" style="width: 100%" class="menu_class">
-      <el-menu-item v-for="m in menus" :key="m.id" :index="m.id" >{{m.name}}</el-menu-item>
+    <el-menu mode="horizontal" style="width: 100%" class="menu_class" router="true">
+      <el-menu-item v-for="m in menus" :key="m.id" :index="m.index" >{{m.name}}</el-menu-item>
       <el-menu-item style="float: right"><el-dropdown>
       <el-avatar class="el-dropdown-link">
       </el-avatar><i class="el-icon-arrow-down el-icon--right"></i>
@@ -27,7 +27,8 @@ export default {
   name: 'Kmenu',
   data () {
     return {
-      menus: [{id: 1, name: '主页'}, {id: 2, name: '测试'}, {id: 3, name: '关于'}]
+      menus: [{id: 1, name: '主页', index: 'index'}, {id: 2, name: '测试', index: 'main'}, {id: 3, name: '关于', index: 'about'},
+        {id: 4, name: '算法', index: 'alo'}]
     }
   },
   created () {

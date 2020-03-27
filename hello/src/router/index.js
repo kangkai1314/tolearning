@@ -14,6 +14,10 @@ export const constantRouter = [
     hidden: true
   },
   {
+    path: '/alo',
+    component: () => import('@/views/kangkai/alo')
+  },
+  {
     path: '/kangkai',
     component: () => import('@/views/kangkai/index')
   }, {
