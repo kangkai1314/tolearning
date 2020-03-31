@@ -186,7 +186,7 @@ export default {
       this.arr.index = a[-1]
       this.arr.indexof = a.indexOf('1')
       this.arr.lastindexof = a.lastIndexOf('1')
-      let b = new Array(1, 2, 3)
+      let b = [1, 2, 3]
       this.arr.contact = b.concat(a)
       this.arr.shift = a.shift()
       this.arr.unshift = a.unshift(...b)

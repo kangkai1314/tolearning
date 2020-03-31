@@ -5,17 +5,22 @@
           <zhihu-item></zhihu-item>
         </div>
       </el-tab-pane>
-      <el-tab-pane label="关注"></el-tab-pane>
-      <el-tab-pane label="热榜"></el-tab-pane>
+      <el-tab-pane label="关注">
+
+      </el-tab-pane>
+      <el-tab-pane label="热榜">
+        <hot-item></hot-item>
+      </el-tab-pane>
     </el-tabs>
 </template>
 
 <script>
 import ZhihuModules from './zhihuModules'
 import ZhihuItem from './zhihuItem'
+import HotItem from './hotItem'
 export default {
   name: 'zhihuContent',
-  components: {ZhihuItem, ZhihuModules}
+  components: {HotItem, ZhihuItem, ZhihuModules}
 }
 </script>
 
