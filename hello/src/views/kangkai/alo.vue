@@ -62,8 +62,8 @@
         </div>
       </el-card>
     </div>
-    <div class="s-view">
-      <el-card>
+    <div class="s-view" style="margin: 10px;display: flex">
+      <el-card style="width: 700px">
         <div slot="header">
           <span>正则表达式</span>
           <el-button @click="showRe">查看</el-button>
@@ -120,6 +120,19 @@
           </ol>
         </div>
       </el-card>
+      <el-card style="width: 700px">
+        <div slot="header">
+          <span>对象</span>
+          <el-button @click="showObj">查看</el-button>
+        </div>
+        <div class="card-content">
+          <el-form :inline="true"><el-form-item label="对象">
+            <el-input placeholder="请输入你的对象" v-model="obj1" ></el-input>
+          </el-form-item></el-form>
+          <ol><li>对象长度 obj.length  <span>{{obj1.length}}</span></li></ol>
+        </div>
+
+      </el-card>
     </div>
 
   </div>
@@ -161,7 +174,9 @@ export default {
       array: '',
       restr: '',
       relambar: '',
-      result: ''
+      result: '',
+      obj1: {
+      }
     }
   },
   methods: {
@@ -204,6 +219,9 @@ export default {
     },
     showRe: function () {
       this.result = this.restr.search(/i/i)
+    },
+    showObj: function () {
+
     }
   }
 }
