@@ -31,4 +31,4 @@ function menus () {
 }
 Mock.mock('/api/jobs', /get/i, jobs)
 Mock.mock('/api/test', /get/i, test1)
-Mock.mock('/api/menu', /get/i, menus)
+Mock.mock('/api/menus', /get/i, menus)

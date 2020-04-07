@@ -129,7 +129,8 @@
           <el-form :inline="true"><el-form-item label="对象">
             <el-input placeholder="请输入你的对象" v-model="obj1" ></el-input>
           </el-form-item></el-form>
-          <ol><li>对象长度 obj.length  <span>{{obj1.length}}</span></li></ol>
+          <ol><li>对象长度 obj.length  <span>{{obj1.length}}</span></li>
+          <li>对象</li></ol>
         </div>
 
       </el-card>
