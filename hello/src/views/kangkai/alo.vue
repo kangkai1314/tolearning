@@ -135,6 +135,34 @@
 
       </el-card>
     </div>
+    <el-card style="width: 700px">
+      <div slot="header">
+        <span>队列</span>
+        <el-button @click="showQueue">查看</el-button>
+      </div>
+      <div class="card-content">
+        <el-form :inline="true"><el-form-item label="对象">
+          <el-input placeholder="请输入你的对象" v-model="obj1" ></el-input>
+        </el-form-item></el-form>
+        <ol><li>对象长度 obj.length  <span>{{obj1.length}}</span></li>
+          <li>对象</li></ol>
+      </div>
+
+    </el-card>
+    <el-card style="width: 700px">
+      <div slot="header">
+        <span>栈</span>
+        <el-button @click="showStack">查看</el-button>
+      </div>
+      <div class="card-content">
+        <el-form :inline="true"><el-form-item label="对象">
+          <el-input placeholder="请输入你的对象" v-model="obj1" ></el-input>
+        </el-form-item></el-form>
+        <ol><li>对象长度 obj.length  <span>{{obj1.length}}</span></li>
+          <li>对象</li></ol>
+      </div>
+
+    </el-card>
 
   </div>
 </template>
@@ -222,6 +250,65 @@ export default {
       this.result = this.restr.search(/i/i)
     },
     showObj: function () {
+
+    },
+    showQueue: function () {
+      function Queue () {
+        let items = []
+        this.enqueue = function (item) {
+          items.push(item)
+        }
+        this.dequeue = function () {
+          items.shift()
+        }
+        this.size = function () {
+          return items.length
+        }
+        this.clear = function () {
+          items = []
+        }
+        this.front = function () {
+          return items[0]
+        }
+      }
+      let q = new Queue()
+      q.enqueue(1)
+      console.log(q.size())
+      q.dequeue()
+      console.log(q.size())
+      for (let i = 0; i < 10; i++) {
+        q.enqueue(i)
+      }
+      console.log(q.size())
+      q.clear()
+      console.log(q.size())
+    },
+    showStack: function () {
+      function Stack () {
+        let items = []
+        this.push = function (item) {
+          items.push(item)
+        }
+        this.pop = function () {
+          items.pop()
+        }
+        this.isEmpty = function () {
+          return items.length === 0
+        }
+        this.size = function () {
+          return items.length
+        }
+        this.clear = function () {
+          items = []
+        }
+      }
+      let s = new Stack()
+      s.push(1)
+      let b = [1, 2, 3, 4, 56, 7]
+      for (let i of b) {
+        s.push(i)
+      }
+      console.log(s.size())
 
     }
   }
