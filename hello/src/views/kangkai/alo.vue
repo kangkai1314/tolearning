@@ -163,6 +163,20 @@
       </div>
 
     </el-card>
+    <el-card style="width: 700px">
+      <div slot="header">
+        <span>栈</span>
+        <el-button @click="showTree">查看</el-button>
+      </div>
+      <div class="card-content">
+        <el-form :inline="true"><el-form-item label="对象">
+          <el-input placeholder="请输入你的对象" v-model="obj1" ></el-input>
+        </el-form-item></el-form>
+        <ol><li>对象长度 obj.length  <span>{{obj1.length}}</span></li>
+          <li>对象</li></ol>
+      </div>
+
+    </el-card>
 
   </div>
 </template>
@@ -309,7 +323,24 @@ export default {
         s.push(i)
       }
       console.log(s.size())
-
+    },
+    showTree: function () {
+      function Node (data, left, right) {
+        this.data = data
+        this.left = left
+        this.right = right
+        this.show = function () {
+          return this.data
+        }
+      }
+      function insert (data) {
+        let n = new Node(data, null, null)
+        if (!this.root) {
+          this.root=n
+        }else{
+          let current=this.root,parent
+        }
+      }
     }
   }
 }
