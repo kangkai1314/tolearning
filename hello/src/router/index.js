@@ -18,6 +18,10 @@ export const constantRouter = [
     component: () => import('@/views/kangkai/alo')
   },
   {
+    path: '/test',
+    component: () => import('@/views/test/blog/index')
+  },
+  {
     path: '/kangkai',
     component: () => import('@/views/kangkai/index')
   }, {

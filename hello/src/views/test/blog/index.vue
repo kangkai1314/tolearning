@@ -1,47 +1,20 @@
 <template>
 <div class="blog_page">
-  <el-container>
-    <el-header>
-      <el-menu mode="horizontal" class="header_menu">
-        <el-menu-item>康凯blog</el-menu-item>
-        <el-menu-item><el-input prefix-icon="el-icon-search"></el-input></el-menu-item>
-        <el-menu-item v-for="i in 5">menu{{i}}</el-menu-item>
-        <el-menu-item><el-dropdown>
-          <span>个人中心</span>
-        </el-dropdown></el-menu-item>
-      </el-menu>
-    </el-header>
-    <el-container>
-      <el-aside >
+  <div class="view" ref="view"  draggable="true" @dragstart="start('$event')">
 
-        <ul class="mulu_nav">
-          <li v-for="menu in menus" :key="menu.id">
-            <router-link :to="menu.path">  {{menu.name}}</router-link>
-          </li>
-        </ul>
-      </el-aside>
-      <el-main>
-        <div class="main_content">
-          <ul >
-            <li v-for="i in 100" :key="i">
-              <el-image></el-image>
-              Content is a  {{i}},pleases notify
-             <span>long content</span>
-            </li>
-          </ul>
-        </div>
-      </el-main>
-    </el-container>
-
-  </el-container>
+  </div>
 </div>
 </template>
 
 <script>
+import TestSub from '../../../components/testSub'
 export default {
   name: 'index',
+  components: {TestSub},
   data () {
     return {
+      number: 0,
+      msg: {msg: 'msg', info: 'info'},
       menus: [{id: 1, name: '知乎', path: '/zhihu'}, {id: 2, name: 'soul', path: '/soul'},
         {id: 3, name: '知乎', path: '/zhihu'}, {id: 4, name: 'soul', path: '/soul'},
         {id: 5, name: '知乎', path: '/zhihu'}, {id: 6, name: 'soul', path: '/soul'},
@@ -50,6 +23,19 @@ export default {
         {id: 11, name: '知乎', path: '/zhihu'}, {id: 12, name: 'soul', path: '/soul'},
         {id: 13, name: '知乎', path: '/zhihu'}, {id: 14, name: 'soul', path: '/soul'}
       ]
+    }
+  },
+  methods: {
+    newObj: function () {
+      for (let i = 0; i < 1000; i++) {
+        this.$nextTick(() => {
+          this.number++
+        })
+      }
+    },
+    start:function (event) {
+      console.log(event)
+
     }
   }
 }
@@ -84,6 +70,11 @@ export default {
       display: flex;
       justify-content: space-between;
     }
+  }
+  .view{
+    width: 100px;
+    height: 100px;
+    background-color: black;
   }
 
 </style>

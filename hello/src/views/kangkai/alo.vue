@@ -184,40 +184,11 @@
           v-model="filterText">
         </el-input>
 
-
         <el-button type="primary" size="small" class="add_new_question" @click="add_new_question"><i></i>添加父节点</el-button>
 
       </div>
 
-      <div class="question_info_lists">
-
-        <el-tree ref="tree" :key="tree_key" :data="treeData" node-key="id" :render-content="renderContent"
-                 :expand-on-click-node="false" :default-expanded-keys="defaultExpand" show-checkbox
-                 :filter-node-method="filterNode"></el-tree>
-
-
-        <el-row class="add_question" v-show="add_question_flag">
-
-          <el-col :span="12">
-
-            <el-input v-model="new_question_name" placeholder="请输入大题名称"></el-input>
-
-          </el-col>
-
-          <el-col :span="12">
-
-            <el-button size="mini" class="btn_sure" @click.stop="add_question_sure">确定</el-button>
-
-            <el-button size="mini" class="btn_cancel" @click.stop="add_question_cancel">取消</el-button>
-
-          </el-col>
-
-        </el-row>
-
-      </div>
     </div>
-
-
 
   </div>
 </template>
@@ -364,24 +335,6 @@ export default {
         s.push(i)
       }
       console.log(s.size())
-    },
-    showTree: function () {
-      function Node (data, left, right) {
-        this.data = data
-        this.left = left
-        this.right = right
-        this.show = function () {
-          return this.data
-        }
-      }
-      function insert (data) {
-        let n = new Node(data, null, null)
-        if (!this.root) {
-          this.root=n
-        }else{
-          let current=this.root,parent
-        }
-      }
     }
   }
 }
