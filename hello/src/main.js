@@ -17,7 +17,7 @@ import '@/mock'
 Vue.config.productionTip = false
 Vue.use(ElementUI, { locale })
 Vue.use(VueI18n)
-Vue.performance=true
+Vue.performance = true
 
 /* eslint-disable no-new */
 new Vue({

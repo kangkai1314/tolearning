@@ -1,8 +1,38 @@
 <template>
 <div class="blog_page">
-  <div class="view" ref="view"  draggable="true" @dragstart="start('$event')">
+  <div class="view" ref="view"  draggable="true" @dragstart="start('$event')" >
 
   </div>
+  <div class="view2">
+    <el-menu mode="horizontal" class="menu">
+      <el-menu-item v-for="menu in menus" :key="menu.id"  >{{menu.name}} </el-menu-item>
+      <el-menu-item><el-dropdown></el-dropdown></el-menu-item>
+    </el-menu>
+    <el-container class="link-view">
+      <el-aside >
+        <el-link v-for="link in menus" :key="link.id" style="width: 100%">{{link.name}}</el-link>
+
+      </el-aside>
+      <el-main>
+        <div class="main-view">
+          <el-tabs>
+            <el-tab-pane label="soul">
+              <el-form>
+                <el-form-item>
+                  <el-select placeholder="请输入你想要输出的名称"></el-select>
+                </el-form-item>
+              </el-form>
+            </el-tab-pane>
+            <el-tab-pane label="zhihu"></el-tab-pane>
+          </el-tabs>
+        </div>
+      </el-main>
+    </el-container>
+
+  </div>
+
+  <p>{{number}}</p>
+  <el-button @click="getDom"></el-button>
 </div>
 </template>
 
@@ -33,9 +63,26 @@ export default {
         })
       }
     },
-    start:function (event) {
+    start: function (event) {
       console.log(event)
-
+    },
+    getDom: function () {
+      console.log(window)
+      console.log(Document)
+      let dom = document.getElementsByClassName('view')[0]
+      console.log(dom)
+      let p1 = document.createElement('p')
+      p1.innerText = 'hello world'
+      // p1.style='bakcgroundcolor:blue'
+      p1.style.backgroundColor = 'blue'
+      p1.addEventListener('click', this.newObj)
+      dom.appendChild(p1)
+      setTimeout(() => {
+        this.$message.error('nmsl')
+      }, 3000)
+      setInterval(() => {
+        this.$message.success('you died baby')
+      }, 1000)
     }
   }
 }
@@ -75,6 +122,14 @@ export default {
     width: 100px;
     height: 100px;
     background-color: black;
+  }
+  .menu{
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #20a0ff;
+    .el-menu-item{
+      border-right: 1px solid black;
+    }
   }
 
 </style>
