@@ -17,8 +17,8 @@ export default {
       // }
     }
   },
-  props:{
-    ob:{}
+  props: {
+    ob: {}
   }
 }
 </script>
