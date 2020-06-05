@@ -1,4 +1,3 @@
-<script src="../../store/app.js"></script>
 <template>
     <div class="zhihu-page">
       <!--//<top-menu style="margin: auto" class="top-fixed"></top-menu>-->
@@ -32,12 +31,11 @@ export default {
   methods: {
     scroll1: function () {
       // console.log(document.documentElement.scrollTop || document.body.scrollTop)
-      if (document.documentElement.scrollTop >70){
+      if (document.documentElement.scrollTop > 70) {
         this.$store.commit('SCROLL_MENU')
       }
-      if(document.documentElement.scrollTop <70){
+      if (document.documentElement.scrollTop < 70) {
         this.$store.commit('INIT_MENU')
-
       }
     }
   },
@@ -54,8 +52,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  .zhihu-page{
-  }
   .header{
     height: 52px;
     padding: 0;

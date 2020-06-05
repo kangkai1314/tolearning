@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <p>Welcome to our app {{a}}</p>
+    <!--<p>Welcome to our app {{a}}</p>-->
+    <!-- shell -->
     <router-view/>
   </div>
 </template>
