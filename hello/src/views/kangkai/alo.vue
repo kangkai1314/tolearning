@@ -177,18 +177,16 @@
       </div>
 
     </el-card>
-    <div>
-      <div class="exam_structure">
-        <el-input
-          placeholder="输入关键字进行过滤"
-          v-model="filterText">
-        </el-input>
-
-        <el-button type="primary" size="small" class="add_new_question" @click="add_new_question"><i></i>添加父节点</el-button>
-
+    <el-card style="width: 700px">
+      <div slot="header">
+        <span>原型</span>
+        <el-button @click="showTree">查看</el-button>
+      </div>
+      <div class="card-content">
+        <el-button @click="viewYuan">查看原型</el-button>
       </div>
 
-    </div>
+    </el-card>
 
   </div>
 </template>
@@ -335,6 +333,24 @@ export default {
         s.push(i)
       }
       console.log(s.size())
+    },
+    viewYuan: function () {
+      console.log('原型U型内联')
+      function Person (name) {
+        this.name = name
+      }
+      let per = new Person('kangkai')
+      console.log(p.__proto__)
+      console.log(p.constructor)
+      console.log(Person.prototype)
+      console.log(p.name)
+      Person.prototype.age = 100
+      console.log(p.age)
+      Person.prototype.getName = function () {
+        return this.name
+      }
+      console.log(p.getName())
+      console.log(Object.getPrototypeOf(p))
     }
   }
 }

@@ -37,6 +37,32 @@ export const constantRouter = [
     }, {
       path: 'question',
       component: () => import('@/views/zhihu/question')
+    }, {
+      path: 'creator',
+      component: () => import('@/views/zhihu/creator'),
+      children: [{
+        path: 'main',
+        component: () => import('@/views/zhihu/component/creator/main')
+      }, {
+        path: 'activity',
+        component: () => import('@/views/zhihu/component/creator/activity')
+      },
+      {
+        path: 'invited',
+        component: () => import('@/views/zhihu/component/creator/invited')
+      },
+      {
+        path: 'video',
+        component: () => import('@/views/zhihu/component/creator/uploadVideo')
+      },
+      {
+        path: 'content',
+        component: () => import('@/views/zhihu/component/creator/content')
+      },
+      {
+        path: 'ranks',
+        component: () => import('@/views/zhihu/component/creator/ranks')
+      }]
     }]
 
   },
