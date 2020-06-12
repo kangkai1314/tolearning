@@ -7,21 +7,21 @@
         <el-input aria-placeholder="请输入你的信息" suffix-icon="el-icon-search" class="search-input"></el-input></el-menu-item>
       <el-menu-item><el-button class="button-class">提问</el-button></el-menu-item>
       <el-menu-item style="float: right">
-        <el-dropdown>
-          <el-avatar :src="url1" class="el-dropdown-link">
+        <el-dropdown @command="handleCommand">
+          <el-avatar :src="url1" class="el-dropdown-link" >
           </el-avatar>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item><i class="el-icon-user-solid"></i>我的主页</el-dropdown-item>
-            <el-dropdown-item><i class="el-icon-s-platform"></i>创作者中心</el-dropdown-item>
-            <el-dropdown-item><i class="el-icon-setting"></i>设置</el-dropdown-item>
-            <el-dropdown-item ><i class="el-icon-switch-button"></i>退出</el-dropdown-item>
+            <el-dropdown-item command="page"><i class="el-icon-user-solid"></i>我的主页</el-dropdown-item>
+            <el-dropdown-item command="creator"><i class="el-icon-s-platform"></i>创作者中心</el-dropdown-item>
+            <el-dropdown-item command="settings"><i class="el-icon-setting"></i>设置</el-dropdown-item>
+            <el-dropdown-item  command="exit"><i class="el-icon-switch-button"></i>退出</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
 
       </el-menu-item>
 
       <el-menu-item style="float: right" >
-          <el-badge :value="20" class="item">        <el-popover trigger="hover">
+          <el-badge :value="20" class="item" style="padding: 0;width: 20px" >        <el-popover trigger="hover">
             <el-tabs>
               <el-tab-pane >
                 <i slot="label" class="el-icon-bank-card">
@@ -46,7 +46,7 @@
 
             </div>
             <i class="el-icon-alarm-clock"
-               slot="reference"></i></el-popover>
+               slot="reference"  style="font-size: 20px"></i></el-popover>
           </el-badge>
         </el-menu-item>
         <el-menu-item style="float: right"><el-badge :value="20" class="item"><el-icon class="el-icon-message"
@@ -64,6 +64,17 @@ export default {
       menus: [{id: 1, name: '主页', index: '/zhihu/index'}, {id: 2, name: '发现', index: '/zhihu/find'}, {id: 3, name: '等你来答', index: '/zhihu/question'}],
       url: '',
       url1: 'https://pic1.zhimg.com/6ffe730f076d5378c03ca8ea2222cee1_is.jpg'
+    }
+  },
+  methods: {
+    handleCommand: function (com) {
+      if (com === 'creator') {
+        this.$router.push('/zhihu/creator/main')
+      } else if (com === 'page') {
+        this.$router.push('/zhihu/person')
+      } else if (com === 'settings') {
+        this.$router.push('/zhihu/setting')
+      }
     }
   }
 }
@@ -91,6 +102,11 @@ export default {
   .top-header{
     width: 100%;
     display: flex;
+  }
+  /deep/
+  .el-badge__content.is-fixed {
+    top: 15px;
+
   }
 
 </style>

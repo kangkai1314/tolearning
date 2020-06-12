@@ -63,6 +63,12 @@ export const constantRouter = [
         path: 'ranks',
         component: () => import('@/views/zhihu/component/creator/ranks')
       }]
+    }, {
+      path: 'person',
+      component: () => import('@/views/zhihu/component/person')
+    }, {
+      path: 'setting',
+      component: () => import('@/views/zhihu/setting')
     }]
 
   },

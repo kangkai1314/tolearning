@@ -11,11 +11,7 @@
       <el-col :span="5" style="width: 296px">
         <zhihu-modules></zhihu-modules>
         <el-row style="margin-top: 10px;background-color: white; width: 296px;">
-          <div class="author_view" style="display: flex;justify-content: space-around">
-            <p><i class="el-icon-phone"> </i>作者中心</p>
-            <p>去开通<i class="el-icon-arrow-right"></i></p>
-
-          </div>
+         <module-creator></module-creator>
 
         </el-row>
         <el-row style="padding: 0;margin-top: 10px;background-color: white">
@@ -39,9 +35,10 @@ import ZhihuContent from './component/zhihuContent'
 import ZhihuModules from './component/zhihuModules'
 import ZhihuFuncs from './component/zhihuFuncs'
 import ZhihuMenu from './component/zhihuMenu'
+import ModuleCreator from "./component/creator/moduleCreator";
 export default {
   name: 'explore',
-  components: {ZhihuMenu, ZhihuFuncs, ZhihuModules, ZhihuContent, ZhihuBanner}
+  components: {ModuleCreator, ZhihuMenu, ZhihuFuncs, ZhihuModules, ZhihuContent, ZhihuBanner}
 }
 </script>
 
