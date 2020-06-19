@@ -7,9 +7,9 @@
 </template>
 
 <script>
-    export default {
-        name: "moduleCreator"
-    }
+export default {
+  name: 'moduleCreator'
+}
 </script>
 
 <style scoped>

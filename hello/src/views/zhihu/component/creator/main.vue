@@ -58,7 +58,6 @@
     </div>
   </div>
 
-
 </template>
 
 <script>
@@ -87,6 +86,5 @@ export default {
       color: #999999;
     }
   }
-
 
 </style>

@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import Analsis from "./analsis";
+import Analsis from './analsis'
 export default {
   name: 'content',
   components: {Analsis}

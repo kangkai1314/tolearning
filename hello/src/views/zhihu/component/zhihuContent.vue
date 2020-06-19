@@ -22,9 +22,21 @@ import ZhihuModules from './zhihuModules'
 import ZhihuItem from './zhihuItem'
 import HotItem from './hotItem'
 import ZhiHuAttention from './ZhiHuAttention'
+import {getRecommendArticles} from '../../../api/zhihu'
+
 export default {
   name: 'zhihuContent',
-  components: {ZhiHuAttention, HotItem, ZhihuItem, ZhihuModules}
+  components: {ZhiHuAttention, HotItem, ZhihuItem, ZhihuModules},
+  created () {
+    this.getRecommendData()
+  },
+  methods: {
+    getRecommendData: function () {
+      getRecommendArticles().then(response => {
+        console.log(response)
+      })
+    }
+  }
 }
 </script>
 

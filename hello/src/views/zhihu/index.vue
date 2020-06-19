@@ -10,7 +10,7 @@
        <router-view></router-view>
       </div>
       <div class="zhihu-fixed">
-        <i class="el-icon-camera"></i>
+        <el-backtop></el-backtop>
       </div>
     </div>
 </template>
@@ -91,16 +91,14 @@ export default {
   }
   .zhihu-fixed{
     position: fixed;
-    bottom: 0;
-    right: 10px;
-    margin: 10px;
-    background-color: white;
-    width: 36px;
-    height: 36px;
+    /*bottom: 0;*/
+    /*right: 10px;*/
+    /*margin: 10px;*/
+    /*background-color: white;*/
+    /*width: 36px;*/
+    /*height: 36px;*/
   }
-  .zhihu-fixed:hover{
-    background-color: #999999;
-  }
+
 
   .fade-enter-active .fade-leave-active{
     transition: opacity 2s;

@@ -340,17 +340,17 @@ export default {
         this.name = name
       }
       let per = new Person('kangkai')
-      console.log(p.__proto__)
-      console.log(p.constructor)
+      // console.log(per.__proto__)
+      console.log(per.constructor)
       console.log(Person.prototype)
-      console.log(p.name)
+      console.log(per.name)
       Person.prototype.age = 100
-      console.log(p.age)
+      console.log(per.age)
       Person.prototype.getName = function () {
         return this.name
       }
-      console.log(p.getName())
-      console.log(Object.getPrototypeOf(p))
+      console.log(per.getName())
+      console.log(Object.getPrototypeOf(per))
     }
   }
 }

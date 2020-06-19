@@ -35,7 +35,7 @@ import ZhihuContent from './component/zhihuContent'
 import ZhihuModules from './component/zhihuModules'
 import ZhihuFuncs from './component/zhihuFuncs'
 import ZhihuMenu from './component/zhihuMenu'
-import ModuleCreator from "./component/creator/moduleCreator";
+import ModuleCreator from './component/creator/moduleCreator'
 export default {
   name: 'explore',
   components: {ModuleCreator, ZhihuMenu, ZhihuFuncs, ZhihuModules, ZhihuContent, ZhihuBanner}
