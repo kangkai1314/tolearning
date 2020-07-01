@@ -1,7 +1,8 @@
 <template>
   <div class="top-header">
+
     <el-menu mode="horizontal" :default-active="1" class="menu-class" router>
-      <el-menu-item><el-image :src="url"></el-image></el-menu-item>
+      <el-menu-item><img src="../../../assets/zhihu.png" style="width: 50px;height: 50px"/></el-menu-item>
       <el-menu-item v-for="m in menus" :key="m.id" :index="m.index" >{{m.name}}</el-menu-item>
       <el-menu-item>
         <el-input aria-placeholder="请输入你的信息" suffix-icon="el-icon-search" class="search-input"></el-input></el-menu-item>
@@ -62,7 +63,6 @@ export default {
   data () {
     return {
       menus: [{id: 1, name: '主页', index: '/zhihu/index'}, {id: 2, name: '发现', index: '/zhihu/find'}, {id: 3, name: '等你来答', index: '/zhihu/question'}],
-      url: '',
       url1: 'https://pic1.zhimg.com/6ffe730f076d5378c03ca8ea2222cee1_is.jpg'
     }
   },
@@ -106,6 +106,9 @@ export default {
   /deep/
   .el-badge__content.is-fixed {
     top: 15px;
+
+  }
+  .el-dropdown-menu {
 
   }
 

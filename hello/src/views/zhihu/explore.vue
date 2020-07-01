@@ -1,7 +1,8 @@
 <template>
   <div class="ex_view" style="margin: auto">
     <el-row >
-      <el-col :span="18" style="width: 796px;margin-right: 10px;margin-top: 10px" >
+      <el-col :span="18" style="width: 796px;margin-right: 10px;margin-top: 10px;
+    font-size: 14px;" >
         <!--<zhihu-banner></zhihu-banner>-->
         <el-row>
           <zhihu-content></zhihu-content>

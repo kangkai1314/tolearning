@@ -69,6 +69,9 @@ export const constantRouter = [
     }, {
       path: 'setting',
       component: () => import('@/views/zhihu/setting')
+    }, {
+      path: 'question/:id',
+      component: () => import('@/views/zhihu/questionItem')
     }]
 
   },

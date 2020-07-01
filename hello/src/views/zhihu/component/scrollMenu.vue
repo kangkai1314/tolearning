@@ -1,9 +1,9 @@
 <template>
   <div class="top-header">
 
-    <el-menu mode="horizontal" :default-active="1" class="menu_class">
+    <el-menu mode="horizontal" :default-active="1" class="menu_class" style="margin: 0 110px">
 
-        <el-menu-item><el-image></el-image></el-menu-item>
+      <el-menu-item><img src="../../../assets/zhihu.png" style="width: 50px;height: 50px"/></el-menu-item>
         <el-menu-item index="1">推荐</el-menu-item>
         <el-menu-item index="2">关注</el-menu-item>
         <el-menu-item index="3" >热榜</el-menu-item>
@@ -24,10 +24,11 @@ export default {
 <style scoped lang="scss">
   .menu-class{
     width: 100%;
+    margin: 0 110px;
+
   }
   .top-header{
     width: 100%;
-    margin: 0 110px;
     background-color: white;
     display: flex;
     z-index: 2;
