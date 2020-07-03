@@ -1,23 +1,10 @@
 <template>
     <div class="hot-ranks" style="padding: 10px">
-     <!--<el-collapse>-->
-       <!--<el-collagitpse-item>-->
-         <!--<template slot="title">-->
-           <!--<div class="title-view">-->
-             <!--<el-button v-for=" i in 7" :key="i" style="margin: 20px">rank</el-button>-->
-           <!--</div>-->
-         <!--</template>-->
-
-       <!--</el-collagitpse-item>-->
-     <!--</el-collapse>-->
-      <!--<el-tabs>-->
-        <!--<el-tab-pane v-for="i in 10" :key="i" label="type">-->
-          <!--榜单内容-->
-        <!--</el-tab-pane>-->
-      <!--</el-tabs>-->
       <div class="openState" v-if="close">
-        <el-row>
-          <el-button v-for="element in list" :key="element.order">{{element.name}}</el-button>
+        <el-row style="display: flex;justify-content: space-between">
+          <div >
+            <el-button v-for="element in list" :key="element.order">{{element.name}}</el-button>
+          </div>
           <el-button style="border-radius: 20px;float: right;margin-right: 20px" size="small" @click="show">
             <i class="el-icon-arrow-down"></i>展开</el-button>
         </el-row>

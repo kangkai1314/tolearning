@@ -2,7 +2,7 @@
 <div class="question_view" style="margin: auto">
   <el-row>
     <el-col :span="16" style="width: 796px">
-      <el-row style="margin: 10px;background-color: white;padding: 10px;display: flex;justify-content: space-around">
+      <el-row style="margin-top:10px;margin-right:10px;background-color: white;padding:10px 0;display: flex;justify-content: space-around;border-bottom: 1px solid #f4f4f5">
         <el-tag><i class="el-icon-hot-water"></i>人气问题</el-tag>
         <el-tag><i class="el-icon-hot-water"></i>潜力好问</el-tag>
         <el-tag><i class="el-icon-hot-water"></i>新问题</el-tag>
@@ -10,7 +10,7 @@
 
       </el-row>
       <el-row v-for="i in 100" :key="i">
-        <div class="question" style="background-color: white;padding: 10px;margin-right: 10px;border-bottom: 1px solid #f4f4f5">
+        <div class="question" style="background-color: white;padding: 10px;margin-right: 10px;border-bottom: 1px solid #f4f4f5;cursor: pointer" @click="goQuestion(i)">
           <h3 style="text-align: left;margin-left: 10px;margin-bottom: 10px;font-size: 16px;font-weight: bold">可以送我一句话么？</h3>
           <div class="view-area" style="display: flex;justify-content: space-between;margin-top: 17px">
             <div class="quest-view">
@@ -21,7 +21,6 @@
 
             <span>69个回答。6555浏览</span>
           </div>
-
 
         </div>
 
@@ -50,7 +49,13 @@ import ZhihuModules from './component/zhihuModules'
 import ZhihuMenu from './component/zhihuMenu'
 export default {
   name: 'question',
-  components: {ZhihuMenu, ZhihuModules}
+  components: {ZhihuMenu, ZhihuModules},
+  methods: {
+    goQuestion: function (number) {
+      console.log(number)
+      this.$router.push('/zhihu/question/' + number)
+    }
+  }
 }
 </script>
 

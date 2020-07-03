@@ -31,7 +31,6 @@ export default {
     width: 100%;
     background-color: white;
     display: flex;
-    z-index: 2;
   }
 
 </style>

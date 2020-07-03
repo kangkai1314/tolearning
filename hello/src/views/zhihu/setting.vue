@@ -2,7 +2,7 @@
   <div class="setting-view">
     <el-tabs tab-position="left" type="border-card">
       <el-tab-pane label="账号与密码">
-        <el-row style="background-color: #f4f4f5">
+        <el-row style="background-color: #ffffff">
           <el-col :span="16" style="text-align: left; padding: 10px;background-color: white" >
             <h3>账号与密码</h3>
             <span>账号设置/个性签名</span>
@@ -70,7 +70,7 @@ zhihu.com/people/kang-kai-51-97</span>
         </el-row>
       </el-tab-pane>
       <el-tab-pane label="消息与邮件">
-        <el-row style="background-color: #f4f4f5">
+        <el-row style="background-color: #ffffff">
           <el-col :span="16" style="text-align: left; padding: 10px;background-color: white" >
             <h3>消息与邮件</h3>
             <span>私信设置/邀请设置/赞同与赞赏/关注/邮件设置</span>
@@ -124,7 +124,7 @@ zhihu.com/people/kang-kai-51-97</span>
         </el-row>
       </el-tab-pane>
       <el-tab-pane label="屏蔽">
-        <el-row style="background-color: #f4f4f5">
+        <el-row style="background-color: #ffffff">
           <el-col :span="16" style="text-align: left; padding: 10px;background-color: white" >
             <h3>屏蔽</h3>
             <span>用户黑名单/话题黑名单/不看他动态</span>
@@ -177,7 +177,7 @@ zhihu.com/people/kang-kai-51-97</span>
         </el-row>
       </el-tab-pane>
       <el-tab-pane label="隐私">
-        <el-row style="background-color: #f4f4f5">
+        <el-row style="background-color: #ffffff">
           <el-col :span="16" style="text-align: left; padding: 10px;background-color: white" >
             <h3>隐私</h3>
             <span>隐私保护</span>
@@ -228,8 +228,8 @@ zhihu.com/people/kang-kai-51-97</span>
         </el-row>
       </el-tab-pane>
       <el-tab-pane label="偏好设置">
-        <el-row style="background-color: #f4f4f5">
-          <el-col :span="16" style="text-align: left; padding: 10px;background-color: white" >
+        <el-row style="background-color: #ffffff">
+          <el-col :span="16" style="text-align: left; padding: 10px" >
             <h3>偏好设置</h3>
             <span>图片水印/瓦力保镖私信保护/快捷键</span>
             <el-divider style="width: 100%"></el-divider>
@@ -290,10 +290,32 @@ export default {
   .setting-view{
     width: 80%;
     margin: auto;
+    padding: 10px;
   }
   /deep/
   .el-tabs--border-card>.el-tabs__content{
-    background-color: #f4f4f5;
+    background-color: #ffffff;
+
+  }
+  /deep/
+  .el-tabs--left .el-tabs__nav-wrap.is-left.is-scrollable{
+    padding: 0;
+  }
+
+  /deep/
+  .el-tabs--left .el-tabs__item.is-left {
+    text-align: center;
+    height: 50px;
+    padding-left: 28px;
+    background-color: #ffffff;
+  }
+  /deep/
+  .el-tabs--left.el-tabs--border-card .el-tabs__item.is-left.is-active {
+    border-color: transparent;
+    border-top-color: #d1dbe5;
+    border-bottom-color: #d1dbe5;
+    background: rgba(133,144,166,.08);
+    color: #444;
   }
   a{
     font-size: 14px;

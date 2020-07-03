@@ -47,7 +47,24 @@ function articles () {
     )
   }
 }
+
+function hotItems () {
+  return {
+    data: Mock.mock({
+      'dataList|50': [
+        {
+          'id|+1': 1,
+          'name': '@ctitle(10)',
+          'desc': '@cparagraph',
+          'hot': '@integer(0,1000)',
+          'url': 'https://pic2.zhimg.com/80/v2-1e0a0d8a294dbeacd73a34d8c053b4e4_400x224.jpg'
+        }
+      ]
+    })
+  }
+}
 Mock.mock('/api/jobs', /get/i, jobs)
 Mock.mock('/api/test', /get/i, test1)
 Mock.mock('/api/menus', /get/i, menus)
 Mock.mock('/api/zhihu/articles', /get/i, articles)
+Mock.mock('/api/zhihu/hotItems',/get/i,hotItems)

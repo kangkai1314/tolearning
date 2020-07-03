@@ -1,17 +1,16 @@
 <template>
   <div class="ex_view" style="margin: auto">
-    <el-row >
-      <el-col :span="18" style="width: 796px;margin-right: 10px;margin-top: 10px;
-    font-size: 14px;" >
+    <el-row style="padding-top: 10px" :gutter="10">
+      <el-col :span="16" style="font-size: 14px" >
         <!--<zhihu-banner></zhihu-banner>-->
         <el-row>
           <zhihu-content></zhihu-content>
         </el-row>
 
       </el-col>
-      <el-col :span="5" style="width: 296px">
+      <el-col :span="8" >
         <zhihu-modules></zhihu-modules>
-        <el-row style="margin-top: 10px;background-color: white; width: 296px;">
+        <el-row style="background-color: white; margin-top: 10px">
          <module-creator></module-creator>
 
         </el-row>
@@ -44,8 +43,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  .zhihu-explore{
-
+  .ex_view{
+   display: flex;
   }
 
 </style>

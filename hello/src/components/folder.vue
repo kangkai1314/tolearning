@@ -1,5 +1,5 @@
 <template>
-  <div id="example">
+  <div class="example">
     <!-- 利用v-if…v-else切换 展开 和 收起 两个画面，template包裹多个元素 -->
     <template v-if="isHide">
       <!-- 只显示摘要的画面 -->
@@ -74,9 +74,9 @@ export default {
     -webkit-line-clamp: 3;    /* 限制文本仅显示前三行 */
 
   }
-  #example p {
-    text-indent: 2em;
-  }
+  /*#example p {*/
+    /*!*text-indent: 2em;*!*/
+  /*}*/
   /* 展开按钮 */
   .showBtn {
     /*width: 100%;    !* 与背景宽度一致 *!*/
@@ -88,15 +88,15 @@ export default {
     /*text-align: center;*/
     /*background: linear-gradient(rgba(233,236,239,.5), white);    !* 背景色半透明到白色的渐变层 *!*/
     /*padding-top: 3rem;*/
-    text-align: right;
+    /*text-align: right;*/
   }
   /* 收起按钮 */
   .hideBtn {
     text-align: right;
   }
-  #example a {
-    text-decoration: none;    /* 清除链接默认的下划线 */
-  }
+  /*#example a {*/
+    /*text-decoration: none;    !* 清除链接默认的下划线 *!*/
+  /*}*/
   /* 向下角箭头 */
   .downArrow {
     display: inline-block;
@@ -116,6 +116,9 @@ export default {
     border-top: 1px solid;
     transform: rotate(45deg);
     margin-top: 3px;
+  }
+  .example{
+    /*max-width: 100px;*/
   }
 
 </style>

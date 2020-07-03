@@ -67,7 +67,7 @@
             </div>
           </el-tab-pane>
           <el-tab-pane label="回答">
-            <h3>我的回答</h3>
+            <h3 class="headerView">我的回答</h3>
             <h2 style="text-align: left">不考虑工作，你最想做什么工作?</h2>
             <div class="author-view" style="display: flex;padding: 10px">
               <el-avatar :src="person.info.url" :size="30" shape="square" style="margin-right: 10px"></el-avatar>
@@ -103,22 +103,19 @@
 
           </el-tab-pane>
           <el-tab-pane label="视频">
-            <h3>我的视频</h3>
+            <h3 class="headerView">我的视频</h3>
 
           </el-tab-pane>
           <el-tab-pane label="提问">
-            <h3>我的提问</h3>
+            <h3 class="headerView">我的提问</h3>
             <div v-for="i in 5" :key="i">
               <h3>你觉得自己五年后十年后，会在哪里干什么</h3>
               <p>时间  0个回答。2个关注</p>
             </div>
 
-
-
-
           </el-tab-pane>
           <el-tab-pane label="文章">
-            <h3>我的文章</h3>
+            <h3 class="headerView">我的文章</h3>
 
           </el-tab-pane>
           <el-tab-pane label="专栏">
@@ -141,32 +138,76 @@
             </el-dropdown>
           </el-tab-pane>
           <div class="collection-view" v-if="showCollection">
-            <h2>我的收藏夹</h2>
-            <div class="co-view" v-for="i in 3" :key="i">
-              <h2>收藏的标题</h2>
+            <h4 style="padding: 10px;border-bottom: 1px solid #f4f4f5">我的收藏夹</h4>
+            <div class="co-view" v-for="i in 3" :key="i" style="padding: 10px">
+              <h3>收藏的标题</h3>
               <span>2016-05-10 更新-1条内容-0人关注</span>
             </div>
           </div>
-          <div class="attention-view" v-else></div>
+          <div class="attention-view" v-else>
+            <el-tabs>
+              <el-tab-pane label="我关注的人">
+                <div class="follower-view" style="display: flex;justify-content: space-between;align-items: center;padding: 10px" v-for="i in 3" :key="i">
+                  <div style="display: flex">
+                    <el-avatar shape="square" :src="url" :size="100" style="margin-right: 10px"></el-avatar>
+                    <div >
+                      <h3>作者姓名</h3>
+                      <p>作者详细描述</p>
+                      <p>n回答。34文章-2312321关注者</p>
+                    </div>
+                  </div>
+
+                  <el-button>已关注</el-button>
+                </div>
+              </el-tab-pane>
+              <el-tab-pane label="关注我的人">
+                <div class="follower-view" style="display: flex;justify-content: space-between;align-items: center;padding: 10px" v-for="i in 3" :key="i">
+                  <div style="display: flex">
+                    <el-avatar shape="square" :src="url" :size="60" style="margin-right: 10px"></el-avatar>
+                    <div style="font-size: 14px" >
+                      <h3>作者姓名</h3>
+                      <p>作者详细描述</p>
+                      <p>n回答。34文章-2312321关注者</p>
+                    </div>
+                  </div>
+
+                  <el-button>已关注</el-button>
+                </div>
+
+              </el-tab-pane>
+              <el-tab-pane label="我关注的专栏"></el-tab-pane>
+            </el-tabs>
+          </div>
 
         </el-tabs>
       </div>
       <div class="view" style="width: 30%">
         <module-creator class="view"></module-creator>
         <div class="success-view" style="margin-top: 10px;background-color: white;padding: 10px">
-          <h3>个人成就</h3>
+          <h3 style="text-align: left">个人成就</h3>
           <el-divider></el-divider>
+          <div style="display: flex;flex-direction: column">
+            <p><i class="el-icon-aim">获得三次赞同</i></p>
+            <p><i class="el-icon-edit">参与14次公共编辑</i></p>
+          </div>
 
         </div>
-        <div class="">
-
+        <div class="" style="display: flex;justify-content: center;background-color: #ffffff;margin-top: 10px;padding: 10px">
+         <div style="flex:1;border-right: 1px solid #f5f5f5">
+           <p style="text-align: center">关注了</p>
+           <p style="text-align: center">{{person.relate.follow}}</p>
+         </div>
+          <div style="flex: 1">
+            <p style="text-align: center">关注者</p>
+            <p style="text-align: center">{{person.relate.follower}}</p>
+          </div>
         </div>
-        <div style="padding: 10px">
-          <p >关注的话题 <span style="float: right">0</span></p>
-          <p>关注的专栏<span style="float: right">0</span></p>
-          <p>关注的问题<span style="float: right">0</span></p>
-          <p>关注的收藏夹<span style="float: right">0</span></p>
-
+        <div style="padding: 10px;font-size: 14px">
+          <p style="padding: 10px;border-bottom: 1px solid #ebebeb;text-align: left">关注的话题 <span style="float: right">{{person.follow.topic}}</span></p>
+          <p style="padding: 10px;border-bottom: 1px solid #ebebeb;text-align: left">关注的专栏<span style="float: right">{{person.follow.item}}</span></p>
+          <p style="padding: 10px;border-bottom: 1px solid #ebebeb;text-align: left">关注的问题<span style="float: right">{{person.follow.question}}</span></p>
+          <p style="padding: 10px;border-bottom: 1px solid #ebebeb;text-align: left">关注的收藏夹<span style="float: right">{{person.follow.collection}}</span></p>
+          <p style="padding: 10px;border-bottom: 1px solid #ebebeb;text-align: left">个人被浏览{{person.follow.times}}次</p>
         </div>
       </div>
 
@@ -189,7 +230,28 @@ export default {
         info: {name: '康凯',
           pro: '互联网',
           company: '亚信软件公司',
-          study: '本科学历'}
+          study: '本科学历'},
+        relate: {
+          follow: 12,
+          follower: 24
+        },
+        follow: {
+          topic: 10,
+          question: 14,
+          collection: 16,
+          item: 3,
+          times: 128
+        }
+      },
+      showCollection: false
+
+    }
+  },
+  methods: {
+    handleCommand: function (com) {
+      console.log(com)
+      if (com === 'collection') {
+        this.showCollection = true
       }
     }
   }
@@ -206,28 +268,23 @@ export default {
     width: 100%;
     background-color: #999999;
   }
-  h3{
-    text-align: left;
-  }
+
   .info-view{
     display: flex;
     flex-direction: row;
+    margin-top: 10px;
   }
   .view{
     /*background-color: white;*/
     /*margin: 10px;*/
     /*padding: 10px;*/
   }
-  p{
+  .headerView{
     text-align: left;
     border-bottom: 1px solid #f4f4f5;
   }
   p:hover{
     cursor: pointer;
-  }
-  h3{
-    border-bottom: 1px solid #f4f4f5;
-    padding: 10px;
   }
 
 </style>

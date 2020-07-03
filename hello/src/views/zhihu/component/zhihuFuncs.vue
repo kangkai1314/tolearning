@@ -1,24 +1,21 @@
 <template>
     <div class="zhihu_func_view">
-      <el-row>      <el-image :src="url" style="width: 296px;padding: 0;margin: 0"></el-image>
-      </el-row>
-
       <div class="view">
-        <el-row style="padding: 10px">
+        <el-row >
           <!--<el-col :span="8" v-for="i in 6" :key="i" style="padding: 10px">-->
             <!--<i class="el-icon-message"></i><p style="padding: 0;margin:0;font-size: 30px" class="sub">live</p>-->
           <!--</el-col>-->
           <el-col :span="8" style="padding: 10px;font-size: 22px" class="sub">
             <i class="el-icon-hot-water" style="color: yellow"></i>
-            <p style="padding: 0;margin: 0">live</p>
+            <p >live</p>
           </el-col>
           <el-col :span="8" style="padding: 10px;font-size: 22px" class="sub">
-            <i class="el-icon-hot-water" style="color: green"></i>
-            <p style="padding: 0;margin: 0">书店</p>
+            <i class="el-icon-s-platform" style="color: green"></i>
+            <p >书店</p>
           </el-col>
           <el-col :span="8" style="padding: 10px;font-size: 22px" class="sub">
-            <i class="el-icon-hot-water" style="color: green"></i>
-            <p style="padding: 0;margin: 0">圆桌</p>
+            <i class="el-icon-tableware" style="color: blue"></i>
+            <p >圆桌</p>
           </el-col>
         </el-row>
         <el-row >
@@ -26,16 +23,16 @@
           <!--<i class="el-icon-message"></i><p style="padding: 0;margin:0;font-size: 30px" class="sub">live</p>-->
           <!--</el-col>-->
           <el-col :span="8" style="padding: 10px;font-size: 20px" class="sub">
-            <i class="el-icon-hot-water" style="color: yellow"></i>
-            <p style="padding: 0;margin: 0">付费咨询</p>
+            <i class="el-icon-hot-water" style="color: #20a0ff"></i>
+            <p >付费咨询</p>
           </el-col>
           <el-col :span="8" style="padding: 10px;font-size: 20px" class="sub">
             <i class="el-icon-s-shop" style="color: green"></i>
-            <p style="padding: 0;margin: 0">专栏</p>
+            <p >专栏</p>
           </el-col>
           <el-col :span="8" style="padding: 10px;font-size: 20px" class="sub">
             <i class="el-icon-s-goods" style="color: green"></i>
-            <p style="padding: 0;margin: 0">百科</p>
+            <p >百科</p>
           </el-col>
         </el-row>
       </div>
@@ -55,8 +52,20 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  .view{
+    margin-top: 10px;
+  }
   .sub:hover{
     color: yellow;
+  }
+  i{
+    font-size: 24px;
+  }
+  p{
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    color: #8590a6;
   }
 
 </style>

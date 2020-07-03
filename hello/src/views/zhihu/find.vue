@@ -1,12 +1,18 @@
 <template>
-    <div class="find_view" style="margin: auto">
+    <div class="find_view" >
       <div class="page_view" >
         <h1 style="text-align: left;width: 100%"><i class="el-icon-document" style="width:36px;height: 36px;color: #20a0ff"></i>最新专题 </h1>
-            <el-image :src="url" style="width:520px;height: 200px;margin-right: 10px"></el-image>
-            <el-image :src="url1" style="width: 520px;height: 200px" ></el-image>
         <el-row :gutter="10">
           <el-col :span="12">
-            <el-card>
+            <el-image :src="url" style="height: 200px"></el-image>
+          </el-col>
+          <el-col :span="12">
+            <el-image :src="url1" style="height: 200px" ></el-image>
+          </el-col>
+        </el-row>
+        <el-row :gutter="10">
+          <el-col :span="12">
+            <el-card style="height: 100%">
               <div slot="header" class="clearfix">
                 <el-row>
                   <el-col :span="12">
@@ -21,7 +27,7 @@
               </div>
               <div  >
                 <el-row v-for="i in 3" :key="i">
-
+                  <el-col :span="6">
                     <el-tag style="flex-shrink: 0;
     padding: 0 8px;
     height: 24px;
@@ -30,14 +36,24 @@
     color: #8590a6;
     background-color: #f6f6f6;
     border-radius: 5px;">选个学习本</el-tag>
-                    <span style="font-size: 15px">海南全岛封关，执行零关税政策，按香港模式打造自由港</span>
+
+                  </el-col>
+                  <el-col :span="18">
+                    <span style="white-space:nowrap;
+    width:100px;
+    overflow:hidden;
+    border:1px solid #000000;
+    text-overflow:ellipsis">海南全岛封关，执行零关税政策，按香港模式打造自由港</span>
+
+                  </el-col>
+
                 </el-row>
 
               </div>
             </el-card>
           </el-col>
           <el-col :span="12">
-            <el-card>
+            <el-card style="height: 100%">
               <div slot="header" class="clearfix">
                 <el-row>
                   <el-col :span="16">
@@ -88,8 +104,8 @@
               </div>
               <div  >
                 <el-row v-for="i in 3" :key="i">
-
-                  <el-tag style="flex-shrink: 0;
+                  <el-col :span="6">
+                    <el-tag style="flex-shrink: 0;
     padding: 0 8px;
     height: 24px;
     line-height: 24px;
@@ -97,7 +113,13 @@
     color: #8590a6;
     background-color: #f6f6f6;
     border-radius: 5px;">选个学习本</el-tag>
-                  <span style="font-size: 15px">海南全岛封关，执行零关税政策，按香港模式打造自由港</span>
+
+                  </el-col>
+                  <el-col :span="18">
+                    <span style="font-size: 15px">海南全岛封关，执行零关税政策，按香港模式打造自由港</span>
+
+                  </el-col>
+
                 </el-row>
 
               </div>
@@ -138,6 +160,11 @@
       <div style="margin-top: 10px">      <el-button style="background-color: white;border-radius: 10px;font-weight: bold;color: #999999">查看更多专题<i class="el-icon-arrow-right"></i></el-button>
       </div>
 
+      <div style="width: 100%;height: 100px;background-color: #ffffff">
+        <div class="test" >This is some long text that will not fit in the box</div>
+
+
+      </div>
     </div>
 </template>
 
@@ -164,6 +191,19 @@ export default {
   .el-row{
     padding: 0;
     margin: 0;
+  }
+  .find_view{
+    padding-top: 10px;
+  }
+  span{
+
+  }
+  .test{
+    white-space:nowrap;
+    width:12em;
+    overflow:hidden;
+    border:1px solid #000000;
+    text-overflow:ellipsis
   }
 
 </style>

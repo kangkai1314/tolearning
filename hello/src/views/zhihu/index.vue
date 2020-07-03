@@ -7,11 +7,12 @@
           <!--</transition>-->
 
       <div class="zhihu-content" >
-       <router-view></router-view>
+       <router-view style="margin: 0 auto;max-width: 1000px"></router-view>
       </div>
       <div class="zhihu-fixed">
         <el-backtop></el-backtop>
       </div>
+      <div class="view"></div>
     </div>
 </template>
 
@@ -62,6 +63,8 @@ export default {
     display: flex;
     position: relative;
     top:60px;
+    width: 100%;
+    height: 100%;
 
   }
   .banner{
@@ -85,9 +88,10 @@ export default {
   .top-fixed{
     position: fixed;
     top:0;
-    z-index: 2;
+    z-index: 100;
     width: 100%;
-
+    background-color: #ffffff;
+    display: flex;
   }
   .zhihu-fixed{
     position: fixed;
@@ -99,9 +103,15 @@ export default {
     /*height: 36px;*/
   }
 
-
   .fade-enter-active .fade-leave-active{
     transition: opacity 2s;
   }
+  /*.view{*/
+    /*width: 100px;*/
+    /*height: 100px;*/
+    /*background-color: black;*/
+    /*margin: 0 auto;*/
+    /*display: flex;*/
+  /*}*/
 
 </style>

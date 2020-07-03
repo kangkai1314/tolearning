@@ -23,35 +23,52 @@
 
       <el-menu-item style="float: right" >
           <el-badge :value="20" class="item" style="padding: 0;width: 20px" >        <el-popover trigger="hover">
-            <el-tabs>
-              <el-tab-pane >
-                <i slot="label" class="el-icon-bank-card">
-                </i>
-                <div class="mess" v-for="i in 5" :key="i" style="padding: 10px;margin: 5px; ">
-                  <el-link>xxx用户</el-link>回答了 <el-link>xxxxx问题</el-link>
-                </div>
+            <div >
+              <el-tabs style="width: 100%;">
+                <el-tab-pane  >
+                  <i slot="label" class="el-icon-bank-card" style="font-size: 22px">
+                  </i>
+                  <div class="mess" v-for="i in 5" :key="i" style="padding: 10px;margin: 5px; ">
+                    <el-link>xxx用户</el-link>回答了 <el-link>xxxxx问题</el-link>
+                  </div>
 
-              </el-tab-pane>
-              <el-tab-pane >
-                <i slot="label" class="el-icon-bank-card"></i>
+                </el-tab-pane >
+                <el-tab-pane>
+                  <i slot="label" class="el-icon-bank-card" style="font-size: 22px"></i>
 
-              </el-tab-pane>
-              <el-tab-pane >
-                <i slot="label" class="el-icon-bank-card"></i>
+                </el-tab-pane>
+                <el-tab-pane >
+                  <i slot="label" class="el-icon-bank-card" style="font-size: 22px"></i>
 
-              </el-tab-pane>
-            </el-tabs>
-            <div class="bottom_notify" style="display: flex;justify-content: space-between">
-              <span><i class="el-icon-setting"></i>设置</span>
-              <span>查看全部通知</span>
+                </el-tab-pane>
+              </el-tabs>
+              <div class="bottom_notify" style="display: flex;justify-content: space-between">
+                <el-button type="text" icon="el-icon-setting" @click="goSetting">设置</el-button>
+                <el-button @click="goMessage" type="text">查看全部通知</el-button>
 
+              </div>
             </div>
+
+
             <i class="el-icon-alarm-clock"
                slot="reference"  style="font-size: 20px"></i></el-popover>
           </el-badge>
         </el-menu-item>
-        <el-menu-item style="float: right"><el-badge :value="20" class="item"><el-icon class="el-icon-message"
-                                                                  style="width: 36px"></el-icon></el-badge></el-menu-item>
+        <el-menu-item style="float: right"><el-badge :value="20" class="item"><el-popover trigger="hover"
+                                                                 >
+          <div  class="hover-view" style="width: 360px">
+            <h3 style="border-bottom: 1px solid #f4f4f5;text-align: center;font-size: 16px;padding: 10px">我的私信</h3>
+            <div  style="border-bottom: 1px solid #f4f4f5;padding: 10px;display: flex;align-items: center" v-for="i in 5" :key="i">
+              <div style="margin-right: 20px">              <el-avatar shape="square" :src="url"></el-avatar>
+              </div>
+              <div >              <p>知乎联盟</p>
+                <span>一周小结</span>
+              </div>
+            </div>
+          </div>
+          <i class="el-icon-message" slot="reference"></i>
+        </el-popover>
+        </el-badge></el-menu-item>
 
     </el-menu>
   </div>
@@ -75,6 +92,12 @@ export default {
       } else if (com === 'settings') {
         this.$router.push('/zhihu/setting')
       }
+    },
+    goSetting:function () {
+      this.$router.push('/zhihu/setting')
+    },
+    goMessage:function () {
+      this.$router.push('/zhihu/message')
     }
   }
 }
@@ -95,13 +118,11 @@ export default {
     background-color: #0084ff;
   }
   .menu-class{
-    width: 100%;
-    margin-right: 100px;
-    margin-left: 100px;
+    display: flex;
+    margin: 0 auto;
  }
   .top-header{
-    width: 100%;
-    display: flex;
+
   }
   /deep/
   .el-badge__content.is-fixed {

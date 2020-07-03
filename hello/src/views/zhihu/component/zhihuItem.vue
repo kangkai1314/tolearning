@@ -4,7 +4,8 @@
         <h3 style="float: left;margin-left: 10px">{{item.title}}</h3>
       </el-row>
       <el-row style="margin-top: 10px;padding: 10px">
-        <el-col :span="6">      <el-image :src="item.url"></el-image>
+        <el-col :span="6">
+          <el-image :src="item.url"></el-image>
         </el-col>
         <el-col :span="18">
         <folder ></folder>
@@ -12,9 +13,9 @@
         </el-col>
       </el-row>
       <el-row style="padding: 0;margin: 0">
-        <el-col :span="6">
+        <el-col :span="8">
           <el-button style="color: #0084ff;background-color: rgba(0,132,255,.1);"><i class="el-icon-caret-top"></i>赞同 {{item.approve}}</el-button>
-          <el-button icon="el-icon-caret-bottom" style="color: #0084ff;background-color: rgba(0,132,255,.1);"></el-button>
+          <el-button icon="el-icon-caret-bottom" style="color: #0084ff;background-color: rgba(0,132,255,.1);" size="small"></el-button>
         </el-col>
         <el-row>
           <el-col :span="3" style="">

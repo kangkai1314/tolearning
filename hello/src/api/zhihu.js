@@ -6,3 +6,10 @@ export function getRecommendArticles () {
     method: 'get'
   })
 }
+
+export function getHotArticles () {
+  return request({
+    url: '/api/zhihu/hotItems',
+    method: 'get'
+  })
+}
