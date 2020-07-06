@@ -1,11 +1,11 @@
 <template>
   <div class="hot-view">
     <div class="hot-zhihu-item" v-for="rankItem in rankItems" :key="rankItem.id" @click="goQuestion(rankItem.id)">
-      <el-row style="padding: 10px" >
+      <el-row style="padding: 10px;display: flex;align-items: center" >
         <el-col :span="12">
           <p style="font-weight: bold">{{rankItem.id}} {{rankItem.name }} </p>
           <div class="content">
-            <p style="padding: 0;margin: 0">
+            <p style="padding: 0;margin: 0;text-align: left">
              {{rankItem.desc}}</p>
             <el-row>
               <i class="el-icon-fi"><span>{{rankItem.hot}}热度</span></i>

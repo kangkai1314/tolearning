@@ -8,13 +8,13 @@
         </div>
       </el-tab-pane>
       <el-tab-pane label="关注">
-        <!--<div class="content" v-for=" item in items" :key="item.id" style="margin-top: 10px">-->
-          <!--<zhi-hu-attention :item="item"></zhi-hu-attention>-->
-        <!--</div>-->
+        <div class="content" v-for=" item in items" :key="item.id" style="margin-top: 10px">
+          <zhi-hu-attention :item="item"></zhi-hu-attention>
+        </div>
 
       </el-tab-pane>
       <el-tab-pane label="热榜">
-        <!--<hot-item></hot-item>-->
+        <hot-item></hot-item>
       </el-tab-pane>
     </el-tabs>
   </div>

@@ -72,9 +72,9 @@ export const constantRouter = [
     }, {
       path: 'question/:id',
       component: () => import('@/views/zhihu/questionItem')
-    },{
-      path:'message',
-      component:()=>import('@/views/zhihu/message')
+    }, {
+      path: 'message',
+      component: () => import('@/views/zhihu/message')
     }]
 
   },

@@ -7,7 +7,7 @@
       <el-menu-item>
         <el-input aria-placeholder="请输入你的信息" suffix-icon="el-icon-search" class="search-input"></el-input></el-menu-item>
       <el-menu-item><el-button class="button-class">提问</el-button></el-menu-item>
-      <el-menu-item style="float: right">
+      <el-menu-item >
         <el-dropdown @command="handleCommand">
           <el-avatar :src="url1" class="el-dropdown-link" >
           </el-avatar>
@@ -21,10 +21,10 @@
 
       </el-menu-item>
 
-      <el-menu-item style="float: right" >
+      <el-menu-item  >
           <el-badge :value="20" class="item" style="padding: 0;width: 20px" >        <el-popover trigger="hover">
             <div >
-              <el-tabs style="width: 100%;">
+              <el-tabs style=" width: 360px">
                 <el-tab-pane  >
                   <i slot="label" class="el-icon-bank-card" style="font-size: 22px">
                   </i>
@@ -49,12 +49,13 @@
               </div>
             </div>
 
-
             <i class="el-icon-alarm-clock"
                slot="reference"  style="font-size: 20px"></i></el-popover>
           </el-badge>
         </el-menu-item>
-        <el-menu-item style="float: right"><el-badge :value="20" class="item"><el-popover trigger="hover"
+
+        <el-menu-item><el-badge :value="message.count" class="item" v-if="message.count!==0">
+          <el-popover trigger="hover"
                                                                  >
           <div  class="hover-view" style="width: 360px">
             <h3 style="border-bottom: 1px solid #f4f4f5;text-align: center;font-size: 16px;padding: 10px">我的私信</h3>
@@ -68,7 +69,22 @@
           </div>
           <i class="el-icon-message" slot="reference"></i>
         </el-popover>
-        </el-badge></el-menu-item>
+        </el-badge>
+          <el-popover trigger="hover" v-else
+          >
+            <div  class="hover-view" style="width: 360px">
+              <h3 style="border-bottom: 1px solid #f4f4f5;text-align: center;font-size: 16px;padding: 10px">我的私信</h3>
+              <div  style="border-bottom: 1px solid #f4f4f5;padding: 10px;display: flex;align-items: center" v-for="i in 5" :key="i">
+                <div style="margin-right: 20px">              <el-avatar shape="square" :src="url"></el-avatar>
+                </div>
+                <div >              <p>知乎联盟</p>
+                  <span>一周小结</span>
+                </div>
+              </div>
+            </div>
+            <i class="el-icon-message" slot="reference"></i>
+          </el-popover>
+        </el-menu-item>
 
     </el-menu>
   </div>
@@ -80,7 +96,15 @@ export default {
   data () {
     return {
       menus: [{id: 1, name: '主页', index: '/zhihu/index'}, {id: 2, name: '发现', index: '/zhihu/find'}, {id: 3, name: '等你来答', index: '/zhihu/question'}],
-      url1: 'https://pic1.zhimg.com/6ffe730f076d5378c03ca8ea2222cee1_is.jpg'
+      url1: 'https://pic1.zhimg.com/6ffe730f076d5378c03ca8ea2222cee1_is.jpg',
+      message: {
+        count: 100,
+        messages: []
+      },
+      notification: {
+        count: 100,
+        notifs: []
+      }
     }
   },
   methods: {
@@ -93,10 +117,10 @@ export default {
         this.$router.push('/zhihu/setting')
       }
     },
-    goSetting:function () {
+    goSetting: function () {
       this.$router.push('/zhihu/setting')
     },
-    goMessage:function () {
+    goMessage: function () {
       this.$router.push('/zhihu/message')
     }
   }
@@ -120,6 +144,7 @@ export default {
   .menu-class{
     display: flex;
     margin: 0 auto;
+    width: 1000px;
  }
   .top-header{
 

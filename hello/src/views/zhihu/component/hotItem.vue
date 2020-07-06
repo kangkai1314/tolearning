@@ -1,7 +1,7 @@
 <template>
     <div class="hot-ranks" style="padding: 10px">
       <div class="openState" v-if="close">
-        <el-row style="display: flex;justify-content: space-between">
+        <el-row style="display: flex;justify-content: flex-start">
           <div >
             <el-button v-for="element in list" :key="element.order">{{element.name}}</el-button>
           </div>

@@ -39,11 +39,7 @@
 
                   </el-col>
                   <el-col :span="18">
-                    <span style="white-space:nowrap;
-    width:100px;
-    overflow:hidden;
-    border:1px solid #000000;
-    text-overflow:ellipsis">海南全岛封关，执行零关税政策，按香港模式打造自由港</span>
+                    <div  class="view"  >海南全岛封关，执行零关税政策，按香港模式打造自由港</div>
 
                   </el-col>
 
@@ -160,11 +156,15 @@
       <div style="margin-top: 10px">      <el-button style="background-color: white;border-radius: 10px;font-weight: bold;color: #999999">查看更多专题<i class="el-icon-arrow-right"></i></el-button>
       </div>
 
-      <div style="width: 100%;height: 100px;background-color: #ffffff">
-        <div class="test" >This is some long text that will not fit in the box</div>
+      <div class="test-view">
+        <div class="ani-view">
 
+        </div>
+        <div class="cricle-view">
 
+        </div>
       </div>
+
     </div>
 </template>
 
@@ -204,6 +204,68 @@ export default {
     overflow:hidden;
     border:1px solid #000000;
     text-overflow:ellipsis
+  }
+  .view{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis
+  }
+  .test-view{
+    width: 1000px;
+    height: 500px;
+    background-color: #20a0ff;
+
+  }
+  .ani-view{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: black;
+    animation: roll 5s linear 1 alternate  ;
+  }
+
+  @keyframes roll {
+    0%{
+      transform: translate(0,0);
+    }
+    25%{
+      transform: translateX(100px);
+    }
+    50%{
+      transform: translate(100px,200px);
+    }
+
+    /*25%{*/
+      /*transform: translateX(200px);*/
+    /*}*/
+    /*30%{*/
+      /*transform: translateY(100px);*/
+    /*}*/
+    /*75%{*/
+     /*transform: translateX(100px);*/
+  /*}*/
+
+    100%{
+      transform: translate(200px,200px);
+    }
+  }
+
+  @keyframes turn {
+    0%{
+      transform: rotate(20deg);
+    }
+
+    100%{
+      transform: rotate(80deg);
+    }
+  }
+
+  .cricle-view{
+    width: 0;
+    height: 0;
+    border: solid 100px red;
+    border-color: red transparent transparent transparent;
+    border-radius: 100px;
   }
 
 </style>
