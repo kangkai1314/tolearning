@@ -12,10 +12,11 @@ import router from './router'
 import store from './store'
 import './permission' // 权限控制
 import './icons'
-import '@/styles/index.scss'// global css
 import '@/mock'
 Vue.config.productionTip = false
 Vue.use(ElementUI, { locale })
+import '@/styles/index.scss'// global css
+
 Vue.use(VueI18n)
 Vue.performance = true
 
