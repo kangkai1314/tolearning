@@ -356,6 +356,20 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+  @import "../../styles/mixin";
+  .el-button{
+    @include button
+  }
+
+  .el-card{
+    border-radius: 50%;
+    /deep/
+    .el-card__body{
+      background-color: #20a0ff;
+    }
+
+  }
+
 
 </style>

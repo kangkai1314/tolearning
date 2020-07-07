@@ -81,8 +81,11 @@
         </el-row>
       </div>
       <div class="view" style="margin-top: 10px">
-        <el-image :src="url3" style="width:520px;height: 200px;margin-right: 10px"></el-image>
-        <el-image :src="url4" style="width: 520px;height: 200px" ></el-image>
+        <div style="margin-top: 10px;display: flex">
+          <el-image :src="url3" style="width:520px;height: 200px;margin-right: 10px;flex: 1"></el-image>
+          <el-image :src="url4" style="width: 520px;height: 200px;flex: 1" ></el-image>
+        </div>
+
         <el-row :gutter="10">
           <el-col :span="12">
             <el-card>
@@ -112,7 +115,7 @@
 
                   </el-col>
                   <el-col :span="18">
-                    <span style="font-size: 15px">海南全岛封关，执行零关税政策，按香港模式打造自由港</span>
+                    <div style="font-size: 15px" class="view">海南全岛封关，执行零关税政策，按香港模式打造自由港</div>
 
                   </el-col>
 
@@ -155,6 +158,17 @@
       </div>
       <div style="margin-top: 10px">      <el-button style="background-color: white;border-radius: 10px;font-weight: bold;color: #999999">查看更多专题<i class="el-icon-arrow-right"></i></el-button>
       </div>
+      <div>
+        <h2>圆周讨论</h2>
+        <div style="display: flex">
+          <div style="flex: 1;background-image: url('https://pic1.zhimg.com/50/v2-ae999d25df04ac81f5e39a8f7c4012e3_hd.jpg')" >
+
+          </div>
+          <div style="flex: 1">
+
+          </div>
+        </div>
+      </div>
 
       <div class="test-view">
         <div class="ani-view">
@@ -176,7 +190,8 @@ export default {
       url: 'https://pic4.zhimg.com/100/v2-94bd85f9a3c4eea4df1f71dbd230d4f3_hd.png',
       url1: 'https://pic2.zhimg.com/100/v2-4b82362f446fa6bc7207b5cae694676d_hd.png',
       url3: 'https://pic1.zhimg.com/100/v2-fa496e12aa1f50638367ca8aa089726c_hd.png',
-      url4: 'https://pic1.zhimg.com/100/v2-3f365aae54304e2e426e8f4a822482bc_hd.png'
+      url4: 'https://pic1.zhimg.com/100/v2-3f365aae54304e2e426e8f4a822482bc_hd.png',
+      url5: 'https://pic1.zhimg.com/50/v2-ae999d25df04ac81f5e39a8f7c4012e3_hd.jpg'
     }
   }
 }
@@ -266,6 +281,10 @@ export default {
     border: solid 100px red;
     border-color: red transparent transparent transparent;
     border-radius: 100px;
+  }
+  /deep/
+  .el-card__header{
+    min-height: 110px;
   }
 
 </style>

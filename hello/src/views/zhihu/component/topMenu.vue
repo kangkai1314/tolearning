@@ -7,24 +7,12 @@
       <el-menu-item>
         <el-input aria-placeholder="请输入你的信息" suffix-icon="el-icon-search" class="search-input"></el-input></el-menu-item>
       <el-menu-item><el-button class="button-class">提问</el-button></el-menu-item>
-      <el-menu-item >
-        <el-dropdown @command="handleCommand">
-          <el-avatar :src="url1" class="el-dropdown-link" >
-          </el-avatar>
-          <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item command="page"><i class="el-icon-user-solid"></i>我的主页</el-dropdown-item>
-            <el-dropdown-item command="creator"><i class="el-icon-s-platform"></i>创作者中心</el-dropdown-item>
-            <el-dropdown-item command="settings"><i class="el-icon-setting"></i>设置</el-dropdown-item>
-            <el-dropdown-item  command="exit"><i class="el-icon-switch-button"></i>退出</el-dropdown-item>
-          </el-dropdown-menu>
-        </el-dropdown>
 
-      </el-menu-item>
 
       <el-menu-item  >
           <el-badge :value="20" class="item" style="padding: 0;width: 20px" >        <el-popover trigger="hover">
             <div >
-              <el-tabs style=" width: 360px">
+              <el-tabs >
                 <el-tab-pane  >
                   <i slot="label" class="el-icon-bank-card" style="font-size: 22px">
                   </i>
@@ -85,6 +73,19 @@
             <i class="el-icon-message" slot="reference"></i>
           </el-popover>
         </el-menu-item>
+      <el-menu-item >
+        <el-dropdown @command="handleCommand">
+          <el-avatar :src="url1" class="el-dropdown-link" >
+          </el-avatar>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item command="page"><i class="el-icon-user-solid"></i>我的主页</el-dropdown-item>
+            <el-dropdown-item command="creator"><i class="el-icon-s-platform"></i>创作者中心</el-dropdown-item>
+            <el-dropdown-item command="settings"><i class="el-icon-setting"></i>设置</el-dropdown-item>
+            <el-dropdown-item  command="exit"><i class="el-icon-switch-button"></i>退出</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+
+      </el-menu-item>
 
     </el-menu>
   </div>
@@ -127,10 +128,8 @@ export default {
 }
 </script>
 
-<style scoped>
-  .item{
-
-  }
+<style scoped lang="scss">
+ @import "../../../styles/mixin";
 
   /deep/
   .el-input__inner{
@@ -138,8 +137,7 @@ export default {
     width: 256px;
   }
   .button-class{
-    color: #fff;
-    background-color: #0084ff;
+    @include blueButton;
   }
   .menu-class{
     display: flex;

@@ -1,0 +1,53 @@
+@mixin button(){
+  background-color: #3a8ee6;
+  color: black;
+  &:hover{
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+  }
+}
+
+@mixin blueButton{
+  color: #fff;
+  background-color: #0084ff;
+  &:hover{
+    background-color: #0077e6;
+    border-color: #0077e6;
+  }
+}
+@mixin shaollowBlueButton{
+  color: #0084ff;
+  border-color: #0084ff;
+  &:hover{
+    background-color: rgba(0,132,255,.06);
+  }
+}
+
+@mixin greyButton{
+  color: #8590a6;
+  border-color: #8590a6;
+  &:hover{
+    background-color: rgba(133,144,166,.06);
+  }
+}
+
+@mixin rightMenu($justify){
+  .el-menu-item{
+    height: 40px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+  .el-menu-item:hover{
+    background: #f6f6f6;
+
+  }
+  .el-menu-item:focus{
+    background: #f6f6f6;
+  }
+
+
+}
