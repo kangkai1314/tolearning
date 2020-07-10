@@ -74,9 +74,9 @@ export default {
     -webkit-line-clamp: 3;    /* 限制文本仅显示前三行 */
 
   }
-  /*#example p {*/
-    /*!*text-indent: 2em;*!*/
-  /*}*/
+  #example p {
+    text-indent: 2em;
+  }
   /* 展开按钮 */
   .showBtn {
     /*width: 100%;    !* 与背景宽度一致 *!*/
@@ -85,14 +85,13 @@ export default {
     /*top: 3rem;    !* 刚好遮挡在最后两行 *!*/
     /*left: 0;*/
     /*z-index: 0;    !* 正序堆叠，覆盖在p元素上方 *!*/
-    /*text-align: center;*/
-    /*background: linear-gradient(rgba(233,236,239,.5), white);    !* 背景色半透明到白色的渐变层 *!*/
+    /*!*background: linear-gradient(rgba(233,236,239,.5), white);    !* 背景色半透明到白色的渐变层 *!*!*/
     /*padding-top: 3rem;*/
     /*text-align: right;*/
   }
   /* 收起按钮 */
   .hideBtn {
-    text-align: right;
+    /*text-align: right;*/
   }
   /*#example a {*/
     /*text-decoration: none;    !* 清除链接默认的下划线 *!*/

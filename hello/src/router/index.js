@@ -62,7 +62,25 @@ export const constantRouter = [
       {
         path: 'ranks',
         component: () => import('@/views/zhihu/component/creator/ranks')
-      }]
+      }, {
+        path: 'banquan',
+        component: () => import('@/views/zhihu/component/creator/banQuan')
+      }, {
+        path: 'wali',
+        component: () => import('@/views/zhihu/component/creator/wali')
+      }, {
+        path: 'comques',
+        component: () => import('@/views/zhihu/component/creator/comques')
+
+      }, {
+          path: 'account',
+          component: () => import('@/views/zhihu/component/creator/account')
+
+        },{
+          path: 'benefit',
+          component: () => import('@/views/zhihu/component/creator/benefit')
+
+        }]
     }, {
       path: 'person',
       component: () => import('@/views/zhihu/component/person')

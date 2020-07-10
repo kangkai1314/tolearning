@@ -44,15 +44,15 @@
             <el-menu-item-group >
               <span slot="title" style="padding: 10px;font-size: 15px;font-weight: bold"><i class="el-icon-user-solid"></i>账号</span>
               <el-menu-item index="1-1">成长等级</el-menu-item>
-              <el-menu-item index="1-2">权益中心</el-menu-item>
-              <el-menu-item index="1-2">账号信息</el-menu-item>
-              <el-menu-item index="1-2">常见问题</el-menu-item>
+              <el-menu-item index="/zhihu/creator/benefit">权益中心</el-menu-item>
+              <el-menu-item index="/zhihu/creator/account">账号信息</el-menu-item>
+              <el-menu-item index="/zhihu/creator/comques">常见问题</el-menu-item>
 
             </el-menu-item-group>
             <el-menu-item-group >
               <span slot="title" style="padding: 10px;font-size: 15px;font-weight: bold"><i class="el-icon-user-solid"></i>其他</span>
-              <el-menu-item index="1-1">瓦力保镖</el-menu-item>
-              <el-menu-item index="1-2">版权服务</el-menu-item>
+              <el-menu-item index="/zhihu/creator/wali">瓦力保镖</el-menu-item>
+              <el-menu-item index="/zhihu/creator/banquan">版权服务</el-menu-item>
 
             </el-menu-item-group>
           </el-menu>

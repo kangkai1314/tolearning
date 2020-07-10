@@ -21,19 +21,19 @@
 
     </div>
     <div class="info-view">
-      <div class="view" style="margin-right: 10px;width: 70%;background-color: white;padding: 10px">
+      <div class="tab-view" >
         <el-tabs v-model="activeName" >
-          <el-tab-pane label="动态">
+          <el-tab-pane label="动态" >
             <h3>我的动态</h3>
             <div class="view" v-for="i in 10" :key="i" style="padding: 10px;border-bottom: 1px solid #f4f4f5" >
-              <div class="view-head" style="display: flex;padding: 20px;justify-content: space-between;align-items: center">
+              <div class="view-head" style="display: flex;justify-content: space-between;align-items: center;font-size: 15px;color: #999999">
                 <span>回答了问题</span>
                 <p>1小时前</p>
 
               </div>
               <h2 style="text-align: left">不考虑工作，你最想做什么工作?</h2>
               <div class="author-view" style="display: flex;padding: 10px">
-                <el-avatar :src="person.info.url" :size="30" shape="square" style="margin-right: 10px"></el-avatar>
+                <el-avatar :src="url" :size="30" shape="square" style="margin-right: 10px"></el-avatar>
                 <span>{{person.info.name}}</span>
               </div>
               <div class="desc-view">
@@ -126,7 +126,7 @@
             <h3>我的想法</h3>
 
           </el-tab-pane>
-          <el-tab-pane label="更多">
+          <el-tab-pane label="更多" >
             <el-dropdown slot="label" @command="handleCommand">
   <span class="el-dropdown-link">
     更多<i class="el-icon-arrow-down el-icon--right"></i>
@@ -136,55 +136,55 @@
                 <el-dropdown-item command="attention">关注</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
-          </el-tab-pane>
-          <div class="collection-view" v-if="showCollection">
-            <h4 style="padding: 10px;border-bottom: 1px solid #f4f4f5">我的收藏夹</h4>
-            <div class="co-view" v-for="i in 3" :key="i" style="padding: 10px">
-              <h3>收藏的标题</h3>
-              <span>2016-05-10 更新-1条内容-0人关注</span>
+            <div class="collection-view" v-if="showCollection">
+              <h4 style="padding: 10px;border-bottom: 1px solid #f4f4f5">我的收藏夹</h4>
+              <div class="co-view" v-for="i in 3" :key="i" style="padding: 10px">
+                <h3>收藏的标题</h3>
+                <span>2016-05-10 更新-1条内容-0人关注</span>
+              </div>
             </div>
-          </div>
-          <div class="attention-view" v-else>
-            <el-tabs>
-              <el-tab-pane label="我关注的人">
-                <div class="follower-view" style="display: flex;justify-content: space-between;align-items: center;padding: 10px" v-for="i in 3" :key="i">
-                  <div style="display: flex">
-                    <el-avatar shape="square" :src="url" :size="100" style="margin-right: 10px"></el-avatar>
-                    <div >
-                      <h3>作者姓名</h3>
-                      <p>作者详细描述</p>
-                      <p>n回答。34文章-2312321关注者</p>
+            <div class="attention-view" v-else>
+              <el-tabs>
+                <el-tab-pane label="我关注的人">
+                  <div class="follower-view" style="display: flex;justify-content: space-between;align-items: center;padding: 10px" v-for="i in 3" :key="i">
+                    <div style="display: flex">
+                      <el-avatar shape="square" :src="url" :size="100" style="margin-right: 10px"></el-avatar>
+                      <div >
+                        <h3>作者姓名</h3>
+                        <p>作者详细描述</p>
+                        <p>n回答。34文章-2312321关注者</p>
+                      </div>
                     </div>
+
+                    <el-button>已关注</el-button>
+                  </div>
+                </el-tab-pane>
+                <el-tab-pane label="关注我的人">
+                  <div class="follower-view" style="display: flex;justify-content: space-between;align-items: center;padding: 10px" v-for="i in 3" :key="i">
+                    <div style="display: flex">
+                      <el-avatar shape="square" :src="url" :size="60" style="margin-right: 10px"></el-avatar>
+                      <div style="font-size: 14px" >
+                        <h3>作者姓名</h3>
+                        <p>作者详细描述</p>
+                        <p>n回答。34文章-2312321关注者</p>
+                      </div>
+                    </div>
+
+                    <el-button>已关注</el-button>
                   </div>
 
-                  <el-button>已关注</el-button>
-                </div>
-              </el-tab-pane>
-              <el-tab-pane label="关注我的人">
-                <div class="follower-view" style="display: flex;justify-content: space-between;align-items: center;padding: 10px" v-for="i in 3" :key="i">
-                  <div style="display: flex">
-                    <el-avatar shape="square" :src="url" :size="60" style="margin-right: 10px"></el-avatar>
-                    <div style="font-size: 14px" >
-                      <h3>作者姓名</h3>
-                      <p>作者详细描述</p>
-                      <p>n回答。34文章-2312321关注者</p>
-                    </div>
-                  </div>
-
-                  <el-button>已关注</el-button>
-                </div>
-
-              </el-tab-pane>
-              <el-tab-pane label="我关注的专栏"></el-tab-pane>
-            </el-tabs>
-          </div>
+                </el-tab-pane>
+                <el-tab-pane label="我关注的专栏"></el-tab-pane>
+              </el-tabs>
+            </div>
+          </el-tab-pane>
 
         </el-tabs>
       </div>
       <div class="view" style="width: 30%">
         <module-creator class="view"></module-creator>
-        <div class="success-view" style="margin-top: 10px;background-color: white;padding: 10px">
-          <h3 style="text-align: left">个人成就</h3>
+        <div class="success-view" style="">
+          <h3 >个人成就</h3>
           <el-divider></el-divider>
           <div style="display: flex;flex-direction: column">
             <p><i class="el-icon-aim">获得三次赞同</i></p>
@@ -192,7 +192,7 @@
           </div>
 
         </div>
-        <div class="" style="display: flex;justify-content: center;background-color: #ffffff;margin-top: 10px;padding: 10px">
+        <div class="" style="display: flex;justify-content: center;background-color: #ffffff;margin-top: 10px;padding: 10px;font-weight: bold">
          <div style="flex:1;border-right: 1px solid #f5f5f5">
            <p style="text-align: center">关注了</p>
            <p style="text-align: center">{{person.relate.follow}}</p>
@@ -203,10 +203,10 @@
           </div>
         </div>
         <div style="padding: 10px;font-size: 14px">
-          <p style="padding: 10px;border-bottom: 1px solid #ebebeb;text-align: left">关注的话题 <span style="float: right">{{person.follow.topic}}</span></p>
-          <p style="padding: 10px;border-bottom: 1px solid #ebebeb;text-align: left">关注的专栏<span style="float: right">{{person.follow.item}}</span></p>
-          <p style="padding: 10px;border-bottom: 1px solid #ebebeb;text-align: left">关注的问题<span style="float: right">{{person.follow.question}}</span></p>
-          <p style="padding: 10px;border-bottom: 1px solid #ebebeb;text-align: left">关注的收藏夹<span style="float: right">{{person.follow.collection}}</span></p>
+          <p style="padding: 10px;border-bottom: 1px solid #ebebeb;text-align: left" @click="goAttention">关注的话题 <span style="float: right">{{person.follow.topic}}</span></p>
+          <p style="padding: 10px;border-bottom: 1px solid #ebebeb;text-align: left" @click="goAttention">关注的专栏<span style="float: right">{{person.follow.item}}</span></p>
+          <p style="padding: 10px;border-bottom: 1px solid #ebebeb;text-align: left" @click="goAttention">关注的问题<span style="float: right">{{person.follow.question}}</span></p>
+          <p style="padding: 10px;border-bottom: 1px solid #ebebeb;text-align: left" @click="goAttention">关注的收藏夹<span style="float: right">{{person.follow.collection}}</span></p>
           <p style="padding: 10px;border-bottom: 1px solid #ebebeb;text-align: left">个人被浏览{{person.follow.times}}次</p>
         </div>
       </div>
@@ -252,7 +252,13 @@ export default {
       console.log(com)
       if (com === 'collection') {
         this.showCollection = true
+      } else {
+        this.showCollection = false
       }
+    },
+    goAttention: function () {
+      console.log(this.activeName)
+      this.activeName = '7'
     }
   }
 }
@@ -273,8 +279,10 @@ export default {
     display: flex;
     flex-direction: row;
     margin-top: 10px;
+
   }
   .view{
+
     /*background-color: white;*/
     /*margin: 10px;*/
     /*padding: 10px;*/
@@ -285,6 +293,33 @@ export default {
   }
   p:hover{
     cursor: pointer;
+  }
+  .tab-view{
+    margin-right: 10px;
+    width: 70%;
+    background-color: white;
+    padding: 10px;
+    text-align: left;
+    h3{
+      font-size: 15px;
+      padding: 10px;
+      border-bottom: 1px solid #f4f4f5;
+    }
+    h2{
+      font-size: 18px;
+      padding: 10px;
+      border-bottom: 1px solid #f4f4f5;
+    }
+  }
+  .success-view{
+    margin-top: 10px;
+    background-color: white;
+    padding: 10px;
+    font-size: 14px;
+    text-align: left;
+    .el-divider--horizontal {
+      margin: 10px 0;
+    }
   }
 
 </style>

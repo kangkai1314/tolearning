@@ -174,9 +174,13 @@
         <div class="ani-view">
 
         </div>
-        <div class="cricle-view">
-
-        </div>
+        <el-tabs>
+          <el-tab-pane label="hello">
+            <div class="cricle-view" @mouseover="show" @mouseleave="notShow">
+              <span>this is hello</span>
+            </div>
+          </el-tab-pane>
+        </el-tabs>
       </div>
 
     </div>
@@ -192,6 +196,14 @@ export default {
       url3: 'https://pic1.zhimg.com/100/v2-fa496e12aa1f50638367ca8aa089726c_hd.png',
       url4: 'https://pic1.zhimg.com/100/v2-3f365aae54304e2e426e8f4a822482bc_hd.png',
       url5: 'https://pic1.zhimg.com/50/v2-ae999d25df04ac81f5e39a8f7c4012e3_hd.jpg'
+    }
+  },
+  methods: {
+    show: function () {
+      console.log('show')
+    },
+    notShow: function () {
+      console.log('notshow')
     }
   }
 }
@@ -224,11 +236,13 @@ export default {
     white-space:nowrap;
     overflow:hidden;
     text-overflow:ellipsis
+
   }
   .test-view{
     width: 1000px;
     height: 500px;
     background-color: #20a0ff;
+    position: relative;
 
   }
   .ani-view{
@@ -237,6 +251,8 @@ export default {
     border-radius: 50%;
     background-color: black;
     animation: roll 5s linear 1 alternate  ;
+    position: absolute;
+    top:200px;
   }
 
   @keyframes roll {

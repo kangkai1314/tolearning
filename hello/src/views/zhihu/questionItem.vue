@@ -161,6 +161,7 @@ export default {
   }
   .question{
     text-align: left;
+    padding: 10px;
 
   }
 
