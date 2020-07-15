@@ -13,3 +13,12 @@ export function getHotArticles () {
     method: 'get'
   })
 }
+
+let appName='testApp'
+export {appName}
+
+export default function () {
+  console.log('tetstst')
+};
+
+

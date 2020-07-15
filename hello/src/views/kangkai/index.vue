@@ -103,7 +103,14 @@ export default {
       this.$message.success('show tag info ' + data.name)
     },
     getUsers: function () {
-      fetchJobs().then(response => {
+      return new Promise((resolve, reject) => {
+        fetchJobs().then(response => {
+          console.log(response)
+          resolve('success')
+        }).catch(error => {
+          reject(error)
+        })
+      }).then(response => {
         console.log(response)
       })
     }
@@ -111,6 +118,7 @@ export default {
   created () {
     this.getUsers()
   }
+
 }
 </script>
 
@@ -123,9 +131,10 @@ p{
 .header{
   position: fixed;
   width: 100%;
-  z-index: 2;
+  z-index: 1000;
   padding: 0;
 }
+
   .aside{
   }
 

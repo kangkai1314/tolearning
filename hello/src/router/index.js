@@ -18,6 +18,11 @@ export const constantRouter = [
     component: () => import('@/views/kangkai/alo')
   },
   {
+    path: '/bili',
+    component: () => import('@/views/bili/index')
+  },
+
+  {
     path: '/test',
     component: () => import('@/views/test/blog/index')
   },
@@ -73,14 +78,14 @@ export const constantRouter = [
         component: () => import('@/views/zhihu/component/creator/comques')
 
       }, {
-          path: 'account',
-          component: () => import('@/views/zhihu/component/creator/account')
+        path: 'account',
+        component: () => import('@/views/zhihu/component/creator/account')
 
-        },{
-          path: 'benefit',
-          component: () => import('@/views/zhihu/component/creator/benefit')
+      }, {
+        path: 'benefit',
+        component: () => import('@/views/zhihu/component/creator/benefit')
 
-        }]
+      }]
     }, {
       path: 'person',
       component: () => import('@/views/zhihu/component/person')

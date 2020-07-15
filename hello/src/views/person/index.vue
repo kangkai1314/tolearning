@@ -24,7 +24,6 @@
         </el-drawer>
       </div>
 
-
       <div class="person-header">
 
         <el-image></el-image>
@@ -113,36 +112,36 @@
 
 <script>
 import ElImageViewer from 'element-ui/packages/image/src/image-viewer'
-import {FormName} from "../../utils/common";
-import BakeMenu from "../../components/bake/menu";
+import {FormName} from '../../utils/common'
+import BakeMenu from '../../components/bake/menu'
 
 export default {
   name: 'index',
   components: {BakeMenu, ElImageViewer},
   data () {
     return {
-      name:FormName,
+      name: FormName,
       panes: [{id: 1, label: '个人信息'}, {id: 2, label: '邮箱'}, {id: 3, label: '手机'}, {id: 4, label: '重置密码'}],
-      form:{
-        name:'',
-        sex:true,
-        label3:false
+      form: {
+        name: '',
+        sex: true,
+        label3: false
 
       },
-      drawer:false,
-      menus:[{id:1,name:'测试'},{id:2,name:'测试2'},{id:3,name:'测试3'}]
+      drawer: false,
+      menus: [{id: 1, name: '测试'}, {id: 2, name: '测试2'}, {id: 3, name: '测试3'}]
     }
   },
-  methods:{
-    studySymbol:function () {
-     let a=Symbol('a')
-      let b=Symbol('a')
+  methods: {
+    studySymbol: function () {
+      let a = Symbol('a')
+      let b = Symbol('a')
       console.log(a)
       console.log(b)
-      console.log(a===b)
+      console.log(a === b)
     },
-    studySet:function () {
-    let a=new Set(['a','b','c'])
+    studySet: function () {
+      let a = new Set(['a', 'b', 'c'])
       a.add('b')
       console.log(a)
       a.delete('a')
@@ -150,40 +149,38 @@ export default {
       console.log(a.has('a'))
       a.clear()
       console.log(a)
-      let b=['1','2','3']
-     let c= b.map(value=>a.add(value))
+      let b = ['1', '2', '3']
+      let c = b.map(value => a.add(value))
       console.log(b)
       console.log(c)
-      let d =Array.from(a)
+      let d = Array.from(a)
       console.log(d)
     },
-    studyWeakset:function () {
-    let a =new WeakSet()
-      let b=new Set()
+    studyWeakset: function () {
+      let a = new WeakSet()
+      let b = new Set()
       a.add(b)
       console.log(a)
     },
-    show:function (x='a') {
+    show: function (x = 'a') {
       console.log(x)
       console.log('show a  a ')
-      let  landInTexts = document.querySelectorAll(".text");
+      let landInTexts = document.querySelectorAll('.text')
       console.log(landInTexts)
       landInTexts.forEach(landInText => {
-        let letters = landInText.textContent.split("");
-        landInText.textContent = "";
+        let letters = landInText.textContent.split('')
+        landInText.textContent = ''
         letters.forEach((letter, i) => {
-          let span = document.createElement("span");
-          span.textContent = letter;
-          span.style.animationDelay = `${i * 0.05}s`;
-          landInText.append(span);
-        });
-      });
-
-
+          let span = document.createElement('span')
+          span.textContent = letter
+          span.style.animationDelay = `${i * 0.05}s`
+          landInText.append(span)
+        })
+      })
     }
   },
-  watch:{
-    '$route'(to,from){
+  watch: {
+    '$route' (to, from) {
       console.log(to)
       console.log(from)
     }
@@ -247,7 +244,6 @@ export default {
     }
 
   }
-
 
   .css-area{
     display: flex;
@@ -349,6 +345,5 @@ export default {
       }
     }
   }
-
 
 </style>
