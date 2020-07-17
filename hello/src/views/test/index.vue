@@ -194,6 +194,9 @@ var person = {
           <div class="view4"></div>
 
         </div>
+        <div class="imgView">
+  <p>this is test</p>
+        </div>
 
       </el-main>
 
@@ -226,12 +229,39 @@ export default {
   },
   methods: {
     hui: function () {
-      let c = document.getElementById('myCanvas')
-      let cxt = c.getContext('2d')
-      cxt.moveTo(10, 10)
-      cxt.lineTo(150, 50)
-      cxt.lineTo(10, 50)
-      cxt.stroke()
+      // let c = document.getElementById('myCanvas')
+      // let cxt = c.getContext('2d')
+      // cxt.moveTo(10, 10)
+      // cxt.lineTo(150, 50)
+      // cxt.lineTo(10, 50)
+      // cxt.stroke()
+      let a = {b: 'hello', [Symbol('c')]: 'c'}
+      console.log(Object.getOwnPropertyDescriptor(a, 'b'))
+      for (let i in a) {
+        console.log(i)
+        console.log(a[i])
+      }
+      let h = [[1, 2, 4], [1, 2, 3], 5]
+      console.log(Object.keys(a))
+      console.log(Object.getOwnPropertyNames(a))
+      console.log(Object.getOwnPropertySymbols(a))
+      console.log(Reflect.ownKeys(a))
+      console.log(Object.values(a))
+      console.log(Object.entries(a))
+      console.log(Object.is(Symbol('c'), Symbol('c')))
+      console.log(Object.is(Symbol.for('a'), Symbol.for('a')))
+      console.log(h.flat(2))
+      let m = new Map()
+      m.set(['123'], '123')
+      console.log(m)
+      let proxy = new Proxy({}, {
+        get: function (target, propKey) {
+          console.log(target)
+          console.log(propKey)
+          return 3
+        }
+      })
+      console.log(proxy.a)
     },
     testFunc: function () {
       let a = {
@@ -543,6 +573,16 @@ list-style-type: none;
     align-self: center;
     flex-grow: 1;
     order:1;
+  }
+  .imgView{
+    background: url(../../assets/agree.png) no-repeat top right;
+    height: 400px;
+    width: 400px;
+    background-position: right 10px top 10px;
+    box-shadow: 0 0 0 10px #655,
+    0 0 0 15px deeppink,
+    0 2px 5px 15px rgba(0,0,0,.6);
+    padding: 10px;
   }
 
 </style>

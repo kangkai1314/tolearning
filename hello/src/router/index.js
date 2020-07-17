@@ -21,6 +21,14 @@ export const constantRouter = [
     path: '/bili',
     component: () => import('@/views/bili/index')
   },
+  {
+    path: '/bilibili',
+    component: () => import('@/views/bili/biliPage'),
+    children: [{
+      path: '',
+      component: () => import('@/views/bili/page/activity')
+    }]
+  },
 
   {
     path: '/test',

@@ -11,6 +11,7 @@
         <part-view v-for="title in titles" :key="title.id" :part="title"></part-view>
       </div>
       <ke-fu></ke-fu>
+      <fixed-nav></fixed-nav>
 
     </div>
 </template>
@@ -20,9 +21,10 @@ import BiliHeader from './component/header'
 import VideoView from './component/videoView'
 import PartView from './component/partView'
 import KeFu from "./component/keFu";
+import FixedNav from "./component/fixedNav";
 export default {
   name: 'index',
-  components: {KeFu, PartView, VideoView, BiliHeader},
+  components: {FixedNav, KeFu, PartView, VideoView, BiliHeader},
   data () {
     return {
       titles: [{id: 1, name: '直播', value: 'live'}, {id: 2, name: '动画', value: 'animate'},
@@ -51,7 +53,7 @@ export default {
   }
   .bili-wrap{
     margin: 0 auto;
-    background-color: black;
+    width: 999px;
   }
 
   @media screen and (max-width: 138px){

@@ -1,6 +1,7 @@
 <template>
   <div class="alo-page" >
     <h2 >算法知识页面</h2>
+    <el-button @click="suanfa">算法实践</el-button>
     <div class="string_view" style="margin: 10px;display: flex">
       <el-card style="width: 700px">
         <div slot="header">
@@ -351,6 +352,14 @@ export default {
       }
       console.log(per.getName())
       console.log(Object.getPrototypeOf(per))
+    },
+    suanfa: function () {
+      let a = [1, 2, 3, 4, 56]
+      for (let i = 0; i < a.length; i++) {
+        for (let j = 0; j < a.length; j++) {
+          console.log(a[i], a[j])
+        }
+      }
     }
   }
 }
@@ -370,6 +379,5 @@ export default {
     }
 
   }
-
 
 </style>
