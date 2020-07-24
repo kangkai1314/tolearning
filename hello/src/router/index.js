@@ -20,6 +20,12 @@ export const constantRouter = [
   {
     path: '/bili',
     component: () => import('@/views/bili/index')
+  },{
+  path:'/buju',
+    component:()=>import('@/views/kangkai/buju')
+  }, {
+    path: '/css',
+    component: () => import('@/views/kangkai/css')
   },
   {
     path: '/bilibili',

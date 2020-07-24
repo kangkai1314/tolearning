@@ -197,6 +197,9 @@ var person = {
         <div class="imgView">
   <p>this is test</p>
         </div>
+        <div  class="card">
+          <div class="item" v-for=" i in 100" :key="i"></div>
+        </div>
 
       </el-main>
 
@@ -343,6 +346,24 @@ export default {
     },
     start: function (event) {
       event.dataTransfer.setData('Text', event.target.id)
+      let windowFunction = function (str) {
+        let n = str.length
+        let left = 0
+        let right = -1
+        let freqMao = {}
+        let max = 0
+        while (left < n) {
+          let next = str[right + 1]
+          if (!freqMao[next] && next !== undefined) {
+            freqMao[next] = 1
+            right++
+          } else {
+            freqMao[left] = 1
+            left++
+          }
+          max = Math.max(max, right - left + 1)
+        }
+      }
     },
     drop: function (event) {
       event.preventDefault()
@@ -574,14 +595,29 @@ list-style-type: none;
     flex-grow: 1;
     order:1;
   }
-  .imgView{
+  .imgView {
     background: url(../../assets/agree.png) no-repeat top right;
     height: 400px;
     width: 400px;
     background-position: right 10px top 10px;
     box-shadow: 0 0 0 10px #655,
     0 0 0 15px deeppink,
-    0 2px 5px 15px rgba(0,0,0,.6);
+    0 2px 5px 15px rgba(0, 0, 0, .6);
+    padding: 10px;
+  }
+  .item{
+    border: solid 5px #F29338;
+    border-radius: 50%;
+    &:nth-child(3n){
+      width: 40px;
+      flex-basis: 40px;
+    }
+  }
+  .card{
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    margin: 10px;
     padding: 10px;
   }
 
