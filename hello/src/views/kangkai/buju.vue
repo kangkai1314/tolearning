@@ -57,21 +57,31 @@ export default {
       //   }
       //
       // }
-      let a=[]
-      let proxy=new Proxy(a,{
-       get:function (target,propkey,receiver) {
-         console.log(propkey)
-       }
+      let a = []
+      let proxy = new Proxy(a, {
+        get: function (target, propkey, receiver) {
+          console.log(propkey)
+        }
       })
-      function ajustHeap(arr,index,length) {
-        for(let i=2*index+1;i<length;i=2*i+1){
-          if(i+1<length&&arr[i+1]《arr[i]){
-            i++
+      function ajustHeap (arr, index, length) {
+
+      }
+    },
+    publish: function () {
+      let event = function () {
+        let map = {}
+        let listen = function (key, fn) {
+          if (!map[key]) {
+            map[key] = []
           }
-          if(arr[index]<arr[i])
+          map[key].push(fn)
+        }
+        let trrigger=function (...rest) {
+          let key=rest[0]
+          let args=rest.slice(1)
+
         }
       }
-
     }
   }
 }
